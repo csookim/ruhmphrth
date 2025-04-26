@@ -4,6 +4,8 @@ from utils import preprocessing, qubit_interaction_graph
 
 class ReuseHeuristic:
     def __init__(self):
+        self.reuse_qubits = 0
+        self.total_qubits = 0
         pass
 
     def run(self, circuit):
@@ -44,8 +46,10 @@ class ReuseHeuristic:
             reuse_pairs = self._find_reuse_pairs(modified_qc, active_qubits)
             cur_qc = modified_qc.copy()
         
+        self.reuse_qubits = i
+        self.total_qubits = len(active_qubits)
         return cur_qc
-        # print(f"We reuse {i} qubits, and now a total of {len(active_qubits)} logical qubits are used.")
+        
     
     def _find_reuse_pairs(self, circuit, active_qubits):
         qiskit_dag = circuit_to_dag(circuit)
