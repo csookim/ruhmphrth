@@ -56,6 +56,18 @@ def qubit_interaction_graph(circuit):
             graph[args] = graph.get(args, 0) + 1
     return graph
 
+def edge_density(graph_dict):
+    nodes = set()
+    for u, v in graph_dict.keys():
+        nodes.add(u)
+        nodes.add(v)
+    
+    n = len(nodes)
+    num_edges = len(graph_dict)
+    max_edges = n * (n - 1) / 2
+    density = num_edges / max_edges
+    return density
+
 def draw_graph(graph_dict):
     g = nx.Graph()
     for k, v in graph_dict.items():
@@ -63,7 +75,7 @@ def draw_graph(graph_dict):
 
     pos = nx.spring_layout(g)
     # Draw nodes and edges
-    nx.draw(g, pos, with_labels=True, node_color='lightblue', node_size=1000, font_weight='bold')
+    nx.draw(g, pos, with_labels=True, node_color='lightblue', node_size=100, font_weight='bold')
     nx.draw_networkx_edges(g, pos)
 
     # Draw edge weights

@@ -78,7 +78,7 @@ class SabreSwap_old(TransformationPass):
         lookahead_w=None,
         extended_set_size=None,
         bridge=False,
-        break_step=10000,
+        break_step=1e9,
     ):
         r"""SabreSwap initializer.
 
@@ -159,6 +159,8 @@ class SabreSwap_old(TransformationPass):
         self.dist_matrix = None
         self.bridge = bridge
         self.break_step = break_step
+        self.added_bridges = 0
+        self.added_swaps = 0
 
     def run(self, dag):
         """Run the SabreSwap pass on `dag`.
@@ -282,23 +284,35 @@ class SabreSwap_old(TransformationPass):
                 if extended_set is None:
                     extended_set = self._obtain_extended_set(dag, front_layer)
 
-                first_second_list_cur = {}
-                first_second_list_swap = {}
+                # first_second_list_cur = {}
+                # first_second_list_swap = {}
+                # for swap_qubits in self._obtain_swaps(front_layer, current_layout):
+                #     trial_layout = current_layout.copy()
+                #     trial_layout.swap(*swap_qubits)
+                #     first_list, second_list = self._score_heuristic_bridge(
+                #         front_layer, extended_set, trial_layout
+                #     )
+                #     first_second_list_swap[swap_qubits] = (first_list, second_list)
+
+                # first_second_list_cur = self._score_heuristic_bridge(
+                #     front_layer, extended_set, current_layout
+                # )
+
+                # best_swap = self._select_swap(
+                #     first_second_list_cur, first_second_list_swap
+                # )
+
+                front_extend_swap = {}
                 for swap_qubits in self._obtain_swaps(front_layer, current_layout):
                     trial_layout = current_layout.copy()
                     trial_layout.swap(*swap_qubits)
-                    first_list, second_list = self._score_heuristic_bridge(
-                        self.heuristic, front_layer, extended_set, trial_layout, swap_qubits
+                    front_extend_swap[swap_qubits] = self._score_heuristic_bridge(
+                        front_layer, extended_set, trial_layout
                     )
-                    first_second_list_swap[swap_qubits] = (first_list, second_list)
-
-                first_second_list_cur = self._score_heuristic_bridge(
-                    self.heuristic, front_layer, extended_set, current_layout
+                front_extend_cur = self._score_heuristic_bridge(
+                    front_layer, extended_set, current_layout
                 )
-
-                best_swap = self._select_swap(
-                    first_second_list_cur, first_second_list_swap
-                )
+                best_swap = self._select_swap_v2(front_extend_cur, front_extend_swap)
 
                 
                 if bridge_candidate is not None and best_swap is None:
@@ -318,24 +332,32 @@ class SabreSwap_old(TransformationPass):
                         if self._is_resolved(successor):
                             front_layer.append(successor)
                     
-                    num_search_steps += 1
                     num_ex_gates += 1
+                    self.added_bridges += 1
 
                 else:
+                    swap_scores = {}
+                    for swap, scores in front_extend_swap.items():
+                        swap_scores[swap] = scores[0] + EXTENDED_SET_WEIGHT * scores[1]
+                    min_score = min(swap_scores.values())
+                    best_swaps = [k for k, v in swap_scores.items() if v == min_score]
+                    best_swaps.sort(key=lambda x: (self._bit_indices[x[0]], self._bit_indices[x[1]]))
+                    best_swap1 = rng.choice(best_swaps).tolist()
                     swap_node = self._apply_gate(
                         mapped_dag,
-                        DAGOpNode(op=SwapGate(), qargs=best_swap),
+                        DAGOpNode(op=SwapGate(), qargs=best_swap1),
                         current_layout,
                         canonical_register,
                     )
-                    current_layout.swap(*best_swap)
+                    current_layout.swap(*best_swap1)
                     ops_since_progress.append(swap_node)
                     num_search_steps += 1
+                    self.added_swaps += 1
                     if num_search_steps % DECAY_RESET_INTERVAL == 0:
                         self._reset_qubits_decay()
                     else:
-                        self.qubits_decay[best_swap[0]] += DECAY_RATE
-                        self.qubits_decay[best_swap[1]] += DECAY_RATE
+                        self.qubits_decay[best_swap1[0]] += DECAY_RATE
+                        self.qubits_decay[best_swap1[1]] += DECAY_RATE
             
             else:
                 ## SWAP ADDITION
@@ -360,14 +382,11 @@ class SabreSwap_old(TransformationPass):
                     canonical_register,
                 )
 
-                # for s in best_swaps:
-                #     print(swap_scores[s], end=" ")
-                # print()
-
                 current_layout.swap(*best_swap)
                 ops_since_progress.append(swap_node)
 
                 num_search_steps += 1
+                self.added_swaps += 1
                 if num_search_steps % DECAY_RESET_INTERVAL == 0:
                     self._reset_qubits_decay()
                 else:
@@ -419,6 +438,34 @@ class SabreSwap_old(TransformationPass):
         if min_second_avg < cur_second_avg:
             return best_swap
     
+        return None
+    
+    def _select_swap_v2(self, cur_avg, swap_avg):
+        cur_front_avg, cur_extend_avg = cur_avg
+
+        min_front_avg = cur_front_avg
+        min_front_swaps = []
+
+        for swap_id, scores in swap_avg.items():
+            front_avg, _ = scores
+            if front_avg < min_front_avg:
+                min_front_avg = front_avg
+                min_front_swaps = [swap_id]
+            elif front_avg == min_front_avg:
+                min_front_swaps.append(swap_id)
+        
+        best_swap = None
+        min_extend_avg = float('inf')
+        for swap_id in min_front_swaps:
+            _, extend_avg = swap_avg[swap_id]
+            if extend_avg < min_extend_avg:
+                min_extend_avg = extend_avg
+                best_swap = swap_id
+
+        if min_front_avg >= 2:
+            return best_swap
+        if min_extend_avg < cur_extend_avg:
+            return best_swap
         return None
     
     def _count_ones(self, score_list):
@@ -559,7 +606,7 @@ class SabreSwap_old(TransformationPass):
 
         raise TranspilerError("Heuristic %s not recognized." % heuristic)
     
-    def _score_heuristic_bridge(self, heuristic, front_layer, extended_set, layout, swap_qubits=None):
+    def _score_heuristic_bridge(self, front_layer, extended_set, layout):
         """Return a heuristic score for a trial layout.
 
         Assuming a trial layout has resulted from a SWAP, we now assign a cost
@@ -569,16 +616,18 @@ class SabreSwap_old(TransformationPass):
         # if VERBOSE:
         #     print("front layer(", len(front_layer), end="): ")
 
-        first_dist = []
+        front_dist = []
         extend_dist = []
         layout_map = layout._v2p
         for node in front_layer:
-            first_dist.append(self.dist_matrix[layout_map[node.qargs[0]], layout_map[node.qargs[1]]].item())
+            front_dist.append(self.dist_matrix[layout_map[node.qargs[0]], layout_map[node.qargs[1]]].item())
 
         for node in extended_set:
             extend_dist.append(self.dist_matrix[layout_map[node.qargs[0]], layout_map[node.qargs[1]]].item())
 
-        return first_dist, extend_dist
+        front_avg = sum(front_dist) / len(front_dist) if len(front_dist) > 0 else 0
+        extend_avg = sum(extend_dist) / len(extend_dist) if len(extend_dist) > 0 else 0
+        return front_avg, extend_avg
 
         # first_cost = self._compute_cost(front_layer, layout) / len(front_layer)
         # if len(extended_set) == 0:
