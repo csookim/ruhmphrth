@@ -17,6 +17,10 @@ def preprocessing(qc):
     for gate in qc.data:
         if gate.operation.name == 'measure':
             continue
+        if gate.operation.name == 'barrier':
+            continue
+        if len(gate.qubits) == 2 and gate.operation.name != 'cx':
+            print("error")
         new_qubits = []
         for q in gate.qubits:
             new_qubits.append(qubit_map[q])
@@ -34,18 +38,11 @@ def count_cx(circ):
     return cx
 
 def return_hw_map(circ):
-    # iterate gates in circuit
-    # get all qubits in circuit
     vqubits = set()
     for g in circ:
         for q in g.qubits:
             vqubits.add(q._index)
     
-    # layout = circ.layout.initial_layout.get_virtual_bits()
-    # print(vqubits)
-    # print(layout)
-    # for q in vqubits:
-    #     pqubits.append(layout[q])
     return list(vqubits)
 
 def qubit_interaction_graph(circuit):
@@ -74,15 +71,12 @@ def draw_graph(graph_dict):
         g.add_edge(k[0], k[1], weight=v)
 
     pos = nx.spring_layout(g)
-    # Draw nodes and edges
     nx.draw(g, pos, with_labels=True, node_color='lightblue', node_size=100, font_weight='bold')
     nx.draw_networkx_edges(g, pos)
 
-    # Draw edge weights
     edge_labels = nx.get_edge_attributes(g, 'weight')
     nx.draw_networkx_edge_labels(g, pos, edge_labels=edge_labels)
 
-    # Show plot
     plt.title("Weighted Graph")
     plt.show()
 
@@ -95,12 +89,10 @@ def calculate_node_score(G, node, max_depth):
         next_depth_nodes = set()
         for current_node in current_depth_nodes:
             neighbors = set(G.neighbors(current_node))
-            # Only consider unvisited neighbors
             unvisited_neighbors = neighbors - visited
             next_depth_nodes.update(unvisited_neighbors)
             visited.update(unvisited_neighbors)
         
-        # Add edge counts for all nodes at this depth
         sum = 0
         for next_node in next_depth_nodes:
             score += G.degree(next_node)
@@ -109,7 +101,6 @@ def calculate_node_score(G, node, max_depth):
         # print("depth nodes: ", next_depth_nodes)
         current_depth_nodes = next_depth_nodes
         
-        # If no more nodes at this depth, we can break
         if not current_depth_nodes:
             break
     
@@ -121,7 +112,6 @@ def find_start_point(cmap):
     node_degrees = dict(G.degree())
     max_degree = max(node_degrees.values())
     max_degree_nodes = [node for node, degree in node_degrees.items() if degree == max_degree]
-    # shuffle the max degree nodes
     random.shuffle(max_degree_nodes)
     # print("max degree nodes: ", max_degree_nodes)
 
