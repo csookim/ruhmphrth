@@ -28,6 +28,29 @@ def preprocessing(qc):
     new_circuit.measure(list(range(new_circuit.num_qubits)), list(range(new_circuit.num_qubits)))
     return new_circuit
 
+def sub_iso_mapping(circ, backend):
+    int_graph = qubit_interaction_graph(circ)
+    logical_graph = nx.Graph()
+    for (q1, q2), weight in int_graph.items():
+        logical_graph.add_edge(q1, q2)
+
+    physical_graph = nx.Graph()
+    physical_graph.add_edges_from(backend.coupling_map)
+
+    GM = nx.algorithms.isomorphism.GraphMatcher(physical_graph, logical_graph)
+    matched = list(GM.subgraph_monomorphisms_iter())
+    if len(matched) == 0:
+        return None
+    
+    mapping = {}
+    qubits = circ.qubits
+    if len(matched) != 0:  
+        for i, (ph, log) in enumerate(matched[0].items()):
+            mapping[qubits[log]] = ph
+            if qubits[log]._index != log:
+                print("error")
+    return mapping
+
 def count_cx(circ):
     cx = 0
     for g in circ:
@@ -198,12 +221,18 @@ def gen_layout(circ, backend):
 
     physical_graph = nx.Graph()
     physical_graph.add_edges_from(backend.coupling_map)
+
+    GM = nx.algorithms.isomorphism.GraphMatcher(physical_graph, logical_graph)
+    if GM.is_isomorphic():
+        for subgraph in GM.subgraph_isomorphisms_iter():
+            print("Match found:", subgraph)
+
     starting_physical_node = find_start_point(backend.coupling_map)
 
     logical_ordered = generate_ordered_list_logical(logical_graph)
     physical_ordered = generate_ordered_list_physical(physical_graph, starting_physical_node)
-    import random
-    random.shuffle(logical_ordered)
+    # import random
+    # random.shuffle(logical_ordered)
     # print(logical_ordered)
     # Create mapping
     mapping = {}

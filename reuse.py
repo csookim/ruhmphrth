@@ -1,17 +1,16 @@
 from qiskit.circuit import Reset
 from qiskit.converters import circuit_to_dag
-from utils import preprocessing, qubit_interaction_graph
+from utils import preprocessing, qubit_interaction_graph    
 
 class ReuseHeuristic:
     def __init__(self):
         self.reuse_qubits = 0
         self.total_qubits = 0
-        pass
 
     def run(self, circuit):
         qc = preprocessing(circuit)
         active_qubits = list(range(qc.num_qubits))
-        reuse_pairs = self._find_reuse_pairs(qc, active_qubits)
+        dependent_qubits, reuse_pairs = self._find_reuse_pairs(qc)
 
         i = 0
         cur_qc = qc.copy()
@@ -43,39 +42,12 @@ class ReuseHeuristic:
             modified_qc = self._modify_circuit(cur_qc,best_pair)
             active_qubits.remove(best_pair[1])
 
-            reuse_pairs = self._find_reuse_pairs(modified_qc, active_qubits)
+            reuse_pairs = self._update_reuse_pairs(dependent_qubits, best_pair, reuse_pairs)
             cur_qc = modified_qc.copy()
         
         self.reuse_qubits = i
         self.total_qubits = len(active_qubits)
         return cur_qc
-        
-    
-    def _find_reuse_pairs(self, circuit, active_qubits):
-        qiskit_dag = circuit_to_dag(circuit)
-        custom_dag = self._my_custom_dag(circuit)
-
-        reusable_pairs = []
-
-        last_i = self._last_index_operation(circuit)
-        first_i = self._first_index_operation(circuit)
-
-        for i in active_qubits:
-            if i not in last_i:
-                continue
-            last_op_index_i = last_i[i]
-            for j in active_qubits:
-                if i == j:
-                    continue
-                if j not in first_i:
-                    continue
-                first_op_index_j = first_i[j]
-
-                if not self._share_same_gate(qiskit_dag, i, j) \
-                    and not self._has_cycle(custom_dag, last_op_index_i, first_op_index_j):
-                    reusable_pairs.append((i, j))
-
-        return reusable_pairs
     
     def _share_same_gate(self, qiskit_dag, i, j):
         for node in qiskit_dag.topological_op_nodes():
@@ -83,25 +55,44 @@ class ReuseHeuristic:
             if i in qubits and j in qubits:
                 return True
         return False
+    
+    def _find_reuse_pairs(self, circuit):
+        nqubits = circuit.num_qubits
+        dep = [set([i]) for i in range(nqubits)]
+        for gate in circuit[::-1]:
+            if len(gate.qubits) == 2:
+                q0 = gate.qubits[0]._index
+                q1 = gate.qubits[1]._index
+                dep[q0] |= dep[q1]
+                dep[q1] |= dep[q0]
 
-    def _has_cycle(self, graph, i, j):
-        if i < j:
-            return False
+        reuse_pairs = []
+        for i in range(nqubits):
+            available = list(set(list(range(nqubits))) - dep[i])
+            for j in available:
+                reuse_pairs.append((j, i))
+        return dep, reuse_pairs
+    
+    def _update_reuse_pairs(self, dependent_qubits, reuse_pair, reuse_pairs):
+        c = reuse_pair[0]
+        d = reuse_pair[1]
 
-        visited = set()
-        stack = [j]
-        cycle_detected = False
-        while len(stack) > 0:
-            node = stack.pop(0)
-            visited.add(node)
-            if node == i:
-                cycle_detected = True
-                break
-            for neighbor in graph.get(node, []):
-                if neighbor not in visited and neighbor not in stack and node <= i:
-                    stack.append(neighbor)
+        for i, v in enumerate(dependent_qubits):
+            if c in v:
+                dependent_qubits[i] |= dependent_qubits[d]
+            if d in v:
+                dependent_qubits[i].add(c)
+        dependent_qubits[c] |= dependent_qubits[d]
+        dependent_qubits[d] |= dependent_qubits[c]
+        new_reuse_pairs = []
+        for pair in reuse_pairs:
+            if pair[0] in dependent_qubits[pair[1]]:
+                continue
+            if d in pair:
+                continue
+            new_reuse_pairs.append(pair)
 
-        return cycle_detected
+        return new_reuse_pairs
     
     def _modify_circuit(self, circuit, pair):
         i, j = pair
@@ -167,19 +158,3 @@ class ReuseHeuristic:
                     dag[vals[bit]].append(index)
                 vals[bit] = index
         return dag
-    
-    def _last_index_operation(self, circuit):
-        last_index = {}
-        for i, gate in enumerate(circuit.data):
-            for q in gate.qubits:
-                last_index[q._index] = i
-        return last_index
-
-
-    def _first_index_operation(self, circuit):
-        first_index = {}
-        for i, gate in enumerate(circuit.data):
-            for q in gate.qubits:
-                if q._index not in first_index:
-                    first_index[q._index] = i
-        return first_index
