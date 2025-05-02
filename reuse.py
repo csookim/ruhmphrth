@@ -39,7 +39,14 @@ class ReuseHeuristic:
             chain.append((best_pair[0], best_pair[1]))
             i += 1
 
-            modified_qc = self._modify_circuit(cur_qc,best_pair)
+            for pair in reuse_pairs:
+                if pair == best_pair:
+                    continue
+                if pair[1] == best_pair[1] and ((best_pair[0], pair[0]) in reuse_pairs):
+                    best_pair = pair
+                    break
+
+            modified_qc = self._modify_circuit(cur_qc, best_pair)
             active_qubits.remove(best_pair[1])
 
             reuse_pairs = self._update_reuse_pairs(dependent_qubits, best_pair, reuse_pairs)
