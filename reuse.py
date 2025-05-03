@@ -1,5 +1,4 @@
 from qiskit.circuit import Reset
-from qiskit.converters import circuit_to_dag
 from utils import preprocessing, qubit_interaction_graph    
 
 class ReuseHeuristic:
@@ -19,13 +18,14 @@ class ReuseHeuristic:
         while len(reuse_pairs) > 0 and i < len(qc.qubits) - 1:
             best = 0
             best_pair = reuse_pairs[0]
+            graph = qubit_interaction_graph(cur_qc)
+
             for pair in reuse_pairs:
                 fr = pair[1]
                 to = pair[0]
 
                 fr_edge_sum = 0
                 to_edge_sum = 0
-                graph = qubit_interaction_graph(cur_qc)
                 for k, v in graph.items():
                     if fr in k:
                         fr_edge_sum += v
@@ -44,7 +44,6 @@ class ReuseHeuristic:
                     continue
                 if pair[1] == best_pair[1] and ((best_pair[0], pair[0]) in reuse_pairs):
                     best_pair = pair
-                    break
 
             modified_qc = self._modify_circuit(cur_qc, best_pair)
             active_qubits.remove(best_pair[1])
