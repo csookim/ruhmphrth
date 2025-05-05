@@ -68,13 +68,33 @@ def return_hw_map(circ):
     
     return list(vqubits)
 
-def qubit_interaction_graph(circuit):
+def qubit_interaction_graph(circuit, count=1e9):
     graph = {}
+    cnt = 0
     for gate in circuit.data:
         if len(gate.qubits) == 2:
             args = tuple(sorted((gate.qubits[0]._index, gate.qubits[1]._index)))
-            graph[args] = graph.get(args, 0) + 1
+            if cnt < count:
+                graph[args] = graph.get(args, 0) + 1
+            else:
+                graph[args] = graph.get(args, 0)
+            cnt += 1
     return graph
+
+def print_map(layout, ancilla=False):
+    new_layout = {}
+    for k, v in layout.items():
+        if k._register.name == "q":
+            new_layout[k._index] = v
+    new_new = sorted(new_layout.items(), key=lambda x: x[0])
+    print(new_new)
+    if ancilla:
+        new_layout = {}
+        for k, v in layout.items():
+            if k._register.name == "ancilla":
+                new_layout[k._index] = v
+        new_new = sorted(new_layout.items(), key=lambda x: x[0])
+        print(new_new)
 
 def edge_density(graph_dict):
     nodes = set()
@@ -194,7 +214,7 @@ def generate_ordered_list_physical(physical_graph, starting_node):
     return ordered_list
 
 def update_layout(layout, mapping):
-    vbits = set(layout.get_virtual_bits().keys())
+    vbits = set(layout.keys())
     pbits = set(layout.get_virtual_bits().values())
 
     mapping_vbits = set(mapping.keys())
@@ -212,9 +232,26 @@ def update_layout(layout, mapping):
     new_layout.from_dict(layout_map)
     return new_layout
 
+def add_ancila(layout_anc, layout):
+    vbits = set(layout_anc.keys())
+    pbits = set(layout_anc.values())
 
-def gen_layout(circ, backend):
-    int_graph = qubit_interaction_graph(circ)
+    layout_vbits = set(layout.keys())
+    layout_pbits = set(layout.values())
+
+    layout_map = {}
+    layout_map.update(layout)
+    new_vbits = list(vbits - layout_vbits)
+    new_pbits = list(pbits - layout_pbits)
+    for i in range(len(new_vbits)):
+        layout_map[new_vbits[i]] = new_pbits[i]
+    # print(layout_map)
+
+    return layout_map
+
+
+def gen_layout(circ, backend, count=1e9):
+    int_graph = qubit_interaction_graph(circ, count=count)
     logical_graph = nx.Graph()
     for (q1, q2), weight in int_graph.items():
         logical_graph.add_edge(q1, q2, weight=weight)
