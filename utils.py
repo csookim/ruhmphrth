@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from qbraid import load_program
 from qiskit import QuantumCircuit
 
-def preprocessing(qc):
+def preprocessing(qc, only_cx=False):
     prg = load_program(qc)
     prg.remove_idle_qubits()
     qc = prg.program
@@ -21,6 +21,8 @@ def preprocessing(qc):
             continue
         if len(gate.qubits) == 2 and gate.operation.name != 'cx':
             print("error")
+        if only_cx and gate.operation.name != 'cx':
+            continue
         new_qubits = []
         for q in gate.qubits:
             new_qubits.append(qubit_map[q])
