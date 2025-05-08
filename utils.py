@@ -4,6 +4,8 @@ from qiskit.transpiler import Layout
 import matplotlib.pyplot as plt
 from qbraid import load_program
 from qiskit import QuantumCircuit
+import random
+
 
 def preprocessing(qc, only_cx=False):
     prg = load_program(qc)
@@ -271,9 +273,8 @@ def gen_layout(circ, backend, count=1e9):
     logical_ordered = generate_ordered_list_logical(logical_graph)
     physical_ordered = generate_ordered_list_physical(physical_graph, starting_physical_node)
 
-    # import random
-    # idx1, idx2 = random.sample(range(len(logical_ordered)), 2)
-    # logical_ordered[idx1], logical_ordered[idx2] = logical_ordered[idx2], logical_ordered[idx1]
+    idx1, idx2 = random.sample(range(len(logical_ordered)), 2)
+    logical_ordered[idx1], logical_ordered[idx2] = logical_ordered[idx2], logical_ordered[idx1]
     # import random
     # random.shuffle(logical_ordered)
     # print(logical_ordered)

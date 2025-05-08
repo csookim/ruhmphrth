@@ -67,16 +67,37 @@ def reverse_mapping(circ, ext_size, coup, backend, layout:dict=None, sabre_old=F
         return rev1_old_fin_layout
     
 def best_mapping(circ, backend, ext_size, count, max_eval):
+    best_cxs = 1e9
+    best_layout = None
+    for _ in range(max_eval):
+        layout = gen_layout(circ, backend, count)
+        t_circ = transpile_new(circ, layout, backend.coupling_map, ext_size=ext_size)
+        cx_count = count_cx(t_circ)
+        if cx_count < best_cxs:
+            best_cxs = cx_count
+            best_layout = layout
+    return best_layout
+
+def best_mapping2(circ, backend, ext_size, count, max_eval):
     best_layout = gen_layout(circ, backend, count)
     t_circ = transpile_new(circ, best_layout, backend.coupling_map, ext_size=ext_size)
     best_cxs = count_cx(t_circ)
+
+    circ_part = circ.copy_empty_like()
+    c = 0
+    for gate in circ:
+        if len(gate.qubits) == 2:
+            circ_part.append(gate.operation, gate.qubits)
+            c += 1
+            if c > count:
+                break
 
     for _ in range(max_eval):
         layout = best_layout.copy()
         l1, l2 = random.sample(list(layout.keys()), 2)
         layout[l1], layout[l2] = layout[l2], layout[l1]
 
-        t_circ = transpile_new(circ, layout, backend.coupling_map, ext_size=ext_size)
+        t_circ = transpile_new(circ_part, layout, backend.coupling_map, ext_size=ext_size)
         cx_count = count_cx(t_circ)
         if cx_count < best_cxs:
             best_cxs = cx_count
