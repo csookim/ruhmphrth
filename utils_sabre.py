@@ -6,6 +6,7 @@ from qiskit.transpiler.passes import SetLayout, ApplyLayout, FullAncillaAllocati
 from qiskit_sabre import SabreSwap_old
 from reuse import ReuseHeuristic
 from qiskit import transpile
+import random
 
 def FakeTokyoV2():
     cmap_tokyo = [(0, 1), (0, 5), (1, 2), (1, 6), (1, 7), 
@@ -66,10 +67,15 @@ def reverse_mapping(circ, ext_size, coup, backend, layout:dict=None, sabre_old=F
         return rev1_old_fin_layout
     
 def best_mapping(circ, backend, ext_size, count, max_eval):
-    best_cxs = 1e9
-    best_layout = None
+    best_layout = gen_layout(circ, backend, count)
+    t_circ = transpile_new(circ, best_layout, backend.coupling_map, ext_size=ext_size)
+    best_cxs = count_cx(t_circ)
+
     for _ in range(max_eval):
-        layout = gen_layout(circ, backend, count)
+        layout = best_layout.copy()
+        l1, l2 = random.sample(list(layout.keys()), 2)
+        layout[l1], layout[l2] = layout[l2], layout[l1]
+
         t_circ = transpile_new(circ, layout, backend.coupling_map, ext_size=ext_size)
         cx_count = count_cx(t_circ)
         if cx_count < best_cxs:
