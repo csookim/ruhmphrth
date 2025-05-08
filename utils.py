@@ -273,8 +273,8 @@ def gen_layout(circ, backend, count=1e9):
     logical_ordered = generate_ordered_list_logical(logical_graph)
     physical_ordered = generate_ordered_list_physical(physical_graph, starting_physical_node)
 
-    idx1, idx2 = random.sample(range(len(logical_ordered)), 2)
-    logical_ordered[idx1], logical_ordered[idx2] = logical_ordered[idx2], logical_ordered[idx1]
+    # idx1, idx2 = random.sample(range(len(logical_ordered)), 2)
+    # logical_ordered[idx1], logical_ordered[idx2] = logical_ordered[idx2], logical_ordered[idx1]
     # import random
     # random.shuffle(logical_ordered)
     # print(logical_ordered)
