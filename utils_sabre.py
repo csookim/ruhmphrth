@@ -1,0 +1,71 @@
+from qiskit_ibm_runtime.fake_provider import FakeTokyo, FakeMumbaiV2
+from qiskit.providers.fake_provider import GenericBackendV2
+from utils import preprocessing, gen_layout, count_cx
+from qiskit.transpiler import Layout, PassManager
+from qiskit.transpiler.passes import SetLayout, ApplyLayout, FullAncillaAllocation, EnlargeWithAncilla
+from qiskit_sabre import SabreSwap_old
+from reuse import ReuseHeuristic
+from qiskit import transpile
+
+def FakeTokyoV2():
+    cmap_tokyo = FakeTokyo().configuration().coupling_map
+    nq = FakeTokyo().configuration().num_qubits
+    backend = GenericBackendV2(num_qubits=nq, coupling_map=cmap_tokyo, noise_info=False)
+    return backend
+
+def sabre(circ, ruh=False, sabre_old=False, backend=None):
+    if backend is None:
+        backend = FakeMumbaiV2()
+    coup = backend.coupling_map
+    circ = preprocessing(circ)
+    if ruh:
+        ruh = ReuseHeuristic()
+        circ = ruh.run(circ)
+    t_circ_qiskit = transpile(circ, backend, layout_method='sabre', routing_method='sabre', optimization_level=0)
+    if sabre_old:
+        layout = t_circ_qiskit.layout.initial_layout.get_virtual_bits()
+        t_circ_qiskit = transpile_new(circ, layout, coup)
+    return t_circ_qiskit
+
+def transpile_new(circ, layout:dict, coup, ext_size=30):
+    pass_s = PassManager()
+    pass_s.append(SetLayout(Layout(layout)))
+    pass_s.append(FullAncillaAllocation(coup))
+    pass_s.append(EnlargeWithAncilla())
+    pass_s.append(ApplyLayout())
+    pass_s.append(SabreSwap_old(coup, "lookahead", bridge=True, extended_set_size=ext_size))
+    transpiled_circ = pass_s.run(circ)
+    return transpiled_circ
+
+def reverse_mapping(circ, ext_size, coup, backend, layout:dict=None, sabre_old=False):
+    rev_circ = circ.copy_empty_like()
+    for gate in circ[::-1]:
+        if len(gate.qubits) == 2:
+            rev_circ.append(gate.operation, gate.qubits)
+
+    fw1 = transpile(circ, backend, layout_method='sabre', routing_method='sabre', optimization_level=0, initial_layout=layout)
+    fw1_fin_layout: dict = fw1.layout.final_virtual_layout(True).get_virtual_bits()
+
+    if not sabre_old:
+        rev1 = transpile(rev_circ, backend, layout_method='sabre', routing_method='sabre', optimization_level=0, initial_layout=fw1_fin_layout)
+        rev1_fin_layout: dict = rev1.layout.final_virtual_layout(True).get_virtual_bits()
+        return rev1_fin_layout
+    else:
+        fw1_old = transpile_new(circ, layout, coup, ext_size)
+        fw1_old_fin_layout_anc: dict = fw1_old.layout.final_virtual_layout(True).get_virtual_bits()
+        t_circ_rev = transpile_new(rev_circ, fw1_old_fin_layout_anc, coup, ext_size)
+
+        rev1_old_fin_layout: dict = t_circ_rev.layout.final_virtual_layout(True).get_virtual_bits()
+        return rev1_old_fin_layout
+    
+def best_mapping(circ, backend, ext_size, count, max_eval):
+    best_cxs = 1e9
+    best_layout = None
+    for _ in range(max_eval):
+        layout = gen_layout(circ, backend, count)
+        t_circ = transpile_new(circ, layout, backend.coupling_map, ext_size=ext_size)
+        cx_count = count_cx(t_circ)
+        if cx_count < best_cxs:
+            best_cxs = cx_count
+            best_layout = layout
+    return best_layout
