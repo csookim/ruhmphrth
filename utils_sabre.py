@@ -61,8 +61,8 @@ def slice_circuit(circ, count):
         new_circ.append(gate)
     return new_circ
 
-def reverse_mapping(circ, ext_size, coup, backend, layout:dict=None, sabre_old=False, count=10):
-    sliced_circ = slice_circuit(circ, count)
+def reverse_mapping(sliced_circ, ext_size, coup, backend, layout:dict=None, sabre_old=False, count=10):
+    # sliced_circ = slice_circuit(circ, count)
 
     if not sabre_old:
         # fw1 = transpile(for_circ, backend, layout_method='sabre', routing_method='sabre', optimization_level=0, initial_layout=layout)
@@ -122,17 +122,32 @@ def best_mapping2(circ, backend, ext_size, count, max_eval):
             best_layout = layout
     return best_layout
 
+def random_l1_l2(circ, layout):
+    first_gate = circ[0]
+    fg_l1 = first_gate.qubits[0]
+    fg_l2 = first_gate.qubits[1]
+    candidate_l = list(layout.keys())
+    candidate_l.remove(fg_l1)
+    candidate_l.remove(fg_l2)
+    l1, l2 = random.sample(candidate_l, 2)
+    return l1, l2
+    
+
 def best_mapping3(circ, backend, ext_size, count, max_eval):
+    sliced_circ = slice_circuit(circ, count)
+
     best_layout = gen_layout(circ, backend, count)
-    best_layout = reverse_mapping(circ, ext_size, backend.coupling_map, backend, best_layout, count=count)
+    best_layout = reverse_mapping(sliced_circ, ext_size, backend.coupling_map, backend, best_layout, count=count)
     t_circ = transpile_new(circ, best_layout, backend.coupling_map, ext_size=ext_size)
     best_cxs = count_cx(t_circ)
     
     for _ in range(max_eval):
         # layout = gen_layout(circ, backend, count)
         layout = best_layout.copy()
-        l1, l2 = random.sample(list(layout.keys()), 2)
+        l1, l2 = random_l1_l2(sliced_circ, layout)
         layout[l1], layout[l2] = layout[l2], layout[l1]
+        # layout = reverse_mapping(sliced_circ, ext_size, backend.coupling_map, backend, best_layout, count=count)
+
         t_circ = transpile_new(circ, layout, backend.coupling_map, ext_size=ext_size)
         cx_count = count_cx(t_circ)
         if cx_count < best_cxs:
