@@ -287,4 +287,3 @@ def gen_layout(circ, backend, count=1e9):
         if qubits[logical_node]._index != logical_node:
             print("error")
     return mapping
-

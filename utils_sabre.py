@@ -45,32 +45,50 @@ def transpile_new(circ, layout:dict, coup, ext_size=30):
     transpiled_circ = pass_s.run(circ)
     return transpiled_circ
 
-def reverse_mapping(circ, ext_size, coup, backend, layout:dict=None, sabre_old=False):
+def slice_circuit(circ, count):
+    new_circ = circ.copy_empty_like()
     rev_circ = circ.copy_empty_like()
-    for gate in circ[::-1]:
+    c = 0
+    for gate in circ:
+        if c == count:
+            break
         if len(gate.qubits) == 2:
-            rev_circ.append(gate.operation, gate.qubits)
+            new_circ.append(gate)
+            rev_circ.append(gate)
+            c += 1
 
-    fw1 = transpile(circ, backend, layout_method='sabre', routing_method='sabre', optimization_level=0, initial_layout=layout)
-    fw1_fin_layout: dict = fw1.layout.final_virtual_layout(True).get_virtual_bits()
+    for gate in rev_circ[::-1]:
+        new_circ.append(gate)
+    return new_circ
+
+def reverse_mapping(circ, ext_size, coup, backend, layout:dict=None, sabre_old=False, count=10):
+    sliced_circ = slice_circuit(circ, count)
 
     if not sabre_old:
-        rev1 = transpile(rev_circ, backend, layout_method='sabre', routing_method='sabre', optimization_level=0, initial_layout=fw1_fin_layout)
-        rev1_fin_layout: dict = rev1.layout.final_virtual_layout(True).get_virtual_bits()
-        return rev1_fin_layout
+        # fw1 = transpile(for_circ, backend, layout_method='sabre', routing_method='sabre', optimization_level=0, initial_layout=layout)
+        # fw1_fin_layout: dict = fw1.layout.final_virtual_layout(True).get_virtual_bits()
+        # rev1 = transpile(rev_circ, backend, layout_method='sabre', routing_method='sabre', optimization_level=0, initial_layout=fw1_fin_layout)
+        # rev1_fin_layout: dict = rev1.layout.final_virtual_layout(True).get_virtual_bits()
+        # return rev1_fin_layout
+        t_circ = transpile(sliced_circ, backend, layout_method='sabre', routing_method='sabre', optimization_level=0, initial_layout=layout)
+        return t_circ.layout.final_virtual_layout(True).get_virtual_bits()
     else:
-        fw1_old = transpile_new(circ, layout, coup, ext_size)
-        fw1_old_fin_layout_anc: dict = fw1_old.layout.final_virtual_layout(True).get_virtual_bits()
-        t_circ_rev = transpile_new(rev_circ, fw1_old_fin_layout_anc, coup, ext_size)
-
-        rev1_old_fin_layout: dict = t_circ_rev.layout.final_virtual_layout(True).get_virtual_bits()
-        return rev1_old_fin_layout
+        # fw1_old = transpile_new(for_circ, layout, coup, ext_size)
+        # fw1_old_fin_layout: dict = fw1_old.layout.final_virtual_layout(True).get_virtual_bits()
+        # rev1_old = transpile_new(rev_circ, fw1_old_fin_layout, coup, ext_size)
+        # rev1_old_fin_layout: dict = rev1_old.layout.final_virtual_layout(True).get_virtual_bits()
+        # return rev1_old_fin_layout
+        t_circ = transpile_new(sliced_circ, layout, coup, ext_size)
+        return t_circ.layout.final_virtual_layout(True).get_virtual_bits()
     
 def best_mapping(circ, backend, ext_size, count, max_eval):
     best_cxs = 1e9
     best_layout = None
     for _ in range(max_eval):
         layout = gen_layout(circ, backend, count)
+        layout = reverse_mapping(circ, ext_size, backend.coupling_map, backend, layout, count=count)
+        l1, l2 = random.sample(list(layout.keys()), 2)
+        layout[l1], layout[l2] = layout[l2], layout[l1]
         t_circ = transpile_new(circ, layout, backend.coupling_map, ext_size=ext_size)
         cx_count = count_cx(t_circ)
         if cx_count < best_cxs:
@@ -106,6 +124,7 @@ def best_mapping2(circ, backend, ext_size, count, max_eval):
 
 def best_mapping3(circ, backend, ext_size, count, max_eval):
     best_layout = gen_layout(circ, backend, count)
+    best_layout = reverse_mapping(circ, ext_size, backend.coupling_map, backend, best_layout, count=count)
     t_circ = transpile_new(circ, best_layout, backend.coupling_map, ext_size=ext_size)
     best_cxs = count_cx(t_circ)
     

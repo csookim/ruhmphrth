@@ -250,6 +250,7 @@ class SabreSwap_old(TransformationPass):
                 # come into play for most circuits.
                 self._undo_operations(ops_since_progress, mapped_dag, current_layout)
                 self._add_greedy_swaps(front_layer, mapped_dag, current_layout, canonical_register)
+                print("error")
                 continue
 
             for e in execute_gate_list:
