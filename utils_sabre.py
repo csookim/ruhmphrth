@@ -127,8 +127,9 @@ def random_l1_l2(circ, layout):
     fg_l1 = first_gate.qubits[0]
     fg_l2 = first_gate.qubits[1]
     candidate_l = list(layout.keys())
-    candidate_l.remove(fg_l1)
-    candidate_l.remove(fg_l2)
+    if len(list(layout.keys())) > 5:
+        candidate_l.remove(fg_l1)
+        candidate_l.remove(fg_l2)
     l1, l2 = random.sample(candidate_l, 2)
     return l1, l2
     
@@ -147,6 +148,26 @@ def best_mapping3(circ, backend, ext_size, count, max_eval):
         l1, l2 = random_l1_l2(sliced_circ, layout)
         layout[l1], layout[l2] = layout[l2], layout[l1]
         # layout = reverse_mapping(sliced_circ, ext_size, backend.coupling_map, backend, best_layout, count=count)
+
+        t_circ = transpile_new(circ, layout, backend.coupling_map, ext_size=ext_size)
+        cx_count = count_cx(t_circ)
+        if cx_count < best_cxs:
+            best_cxs = cx_count
+            best_layout = layout
+    return best_layout
+
+def best_mapping4(circ, backend, ext_size, count, max_eval):
+    sliced_circ = slice_circuit(circ, count)
+
+    best_layout = gen_layout(circ, backend, count)
+    best_layout = reverse_mapping(sliced_circ, ext_size, backend.coupling_map, backend, best_layout, count=count)
+    t_circ = transpile_new(circ, best_layout, backend.coupling_map, ext_size=ext_size)
+    best_cxs = count_cx(t_circ)
+    
+    for _ in range(max_eval):
+        layout = best_layout.copy()
+        l1, l2 = random.sample(list(layout.keys()), 2)
+        layout[l1], layout[l2] = layout[l2], layout[l1]
 
         t_circ = transpile_new(circ, layout, backend.coupling_map, ext_size=ext_size)
         cx_count = count_cx(t_circ)
