@@ -53,6 +53,7 @@ class ReuseHeuristic:
         
         self.reuse_qubits = i
         self.total_qubits = len(active_qubits)
+        cur_qc = preprocessing(cur_qc)
         return cur_qc
     
     def _share_same_gate(self, qiskit_dag, i, j):
