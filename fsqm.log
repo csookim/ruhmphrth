@@ -1,0 +1,3675 @@
+Running: python3 run.py 0
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/4gt11_83.qasm
+Output file  : ../output/4gt11_83.qasm
+Reverse file : ../reverse/4gt11_83.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 6
+# add_swap_num: 0
+# add_bridge_num: 2
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.004      0.001
+Initial & Main Mapping         0.005      0.002
+Post-processing                0.005      0.002
+END Program                    0.008      0.002
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 6.80469 MB
+./FSQM ../example/4gt11_83.qasm ../output/4gt11_83.qasm ../reverse/4gt11_83.qasm 0.8 9 3 | tee ../log/4gt11_83.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+4gt11_83            |       0 |       0 |       6 |   0.002 | division by zero
+Running: python3 run.py 1
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/4gt11_84.qasm
+Output file  : ../output/4gt11_84.qasm
+Reverse file : ../reverse/4gt11_84.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+./FSQM ../example/4gt11_84.qasm ../output/4gt11_84.qasm ../reverse/4gt11_84.qasm 0.8 9 3 | tee ../log/4gt11_84.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+4gt11_84            |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 2
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/4gt13_92.qasm
+Output file  : ../output/4gt13_92.qasm
+Reverse file : ../reverse/4gt13_92.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 0
+# add_swap_num: 0
+# add_bridge_num: 0
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.004      0.001
+Initial & Main Mapping         0.005      0.001
+Post-processing                0.005      0.002
+END Program                    0.008      0.002
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 6.80469 MB
+./FSQM ../example/4gt13_92.qasm ../output/4gt13_92.qasm ../reverse/4gt13_92.qasm 0.8 9 3 | tee ../log/4gt13_92.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+4gt13_92            |      21 |       0 |       0 |   0.002 | 0.0
+Running: python3 run.py 3
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/4mod5-bdd_287.qasm
+Output file  : ../output/4mod5-bdd_287.qasm
+Reverse file : ../reverse/4mod5-bdd_287.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 15
+# add_swap_num: 0
+# add_bridge_num: 5
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.007      0.002
+Initial & Main Mapping         0.008      0.002
+Post-processing                0.008      0.003
+END Program                    0.017      0.003
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 6.80469 MB
+./FSQM ../example/4mod5-bdd_287.qasm ../output/4mod5-bdd_287.qasm ../reverse/4mod5-bdd_287.qasm 0.8 9 3 | tee ../log/4mod5-bdd_287.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+4mod5-bdd_287       |       0 |       0 |      15 |   0.003 | division by zero
+Running: python3 run.py 4
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/4mod5-v0_18.qasm
+Output file  : ../output/4mod5-v0_18.qasm
+Reverse file : ../reverse/4mod5-v0_18.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 21
+# add_swap_num: 2
+# add_bridge_num: 5
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.003      0.001
+Initial & Main Mapping         0.003      0.002
+Post-processing                0.004      0.002
+END Program                    0.013      0.002
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 6.80469 MB
+./FSQM ../example/4mod5-v0_18.qasm ../output/4mod5-v0_18.qasm ../reverse/4mod5-v0_18.qasm 0.8 9 3 | tee ../log/4mod5-v0_18.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+4mod5-v0_18         |       0 |       0 |      21 |   0.002 | division by zero
+Running: python3 run.py 5
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/4mod5-v0_19.qasm
+Output file  : ../output/4mod5-v0_19.qasm
+Reverse file : ../reverse/4mod5-v0_19.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 0
+# add_swap_num: 0
+# add_bridge_num: 0
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.014      0.001
+Initial & Main Mapping         0.014      0.001
+Post-processing                0.014      0.002
+END Program                    0.016      0.002
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 6.79297 MB
+./FSQM ../example/4mod5-v0_19.qasm ../output/4mod5-v0_19.qasm ../reverse/4mod5-v0_19.qasm 0.8 9 3 | tee ../log/4mod5-v0_19.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+4mod5-v0_19         |       0 |       0 |       0 |   0.002 | division by zero
+Running: python3 run.py 6
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/4mod5-v0_20.qasm
+Output file  : ../output/4mod5-v0_20.qasm
+Reverse file : ../reverse/4mod5-v0_20.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 0
+# add_swap_num: 0
+# add_bridge_num: 0
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.003      0.001
+Initial & Main Mapping         0.003      0.001
+Post-processing                0.003      0.002
+END Program                    0.012      0.002
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 6.79688 MB
+./FSQM ../example/4mod5-v0_20.qasm ../output/4mod5-v0_20.qasm ../reverse/4mod5-v0_20.qasm 0.8 9 3 | tee ../log/4mod5-v0_20.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+4mod5-v0_20         |       0 |       0 |       0 |   0.002 | division by zero
+Running: python3 run.py 7
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/4mod5-v1_22.qasm
+Output file  : ../output/4mod5-v1_22.qasm
+Reverse file : ../reverse/4mod5-v1_22.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 0
+# add_swap_num: 0
+# add_bridge_num: 0
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.003      0.001
+Initial & Main Mapping         0.003      0.001
+Post-processing                0.003      0.001
+END Program                    0.004      0.002
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 6.80469 MB
+./FSQM ../example/4mod5-v1_22.qasm ../output/4mod5-v1_22.qasm ../reverse/4mod5-v1_22.qasm 0.8 9 3 | tee ../log/4mod5-v1_22.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+4mod5-v1_22         |       0 |       0 |       0 |   0.002 | division by zero
+Running: python3 run.py 8
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/4mod5-v1_23.qasm
+Output file  : ../output/4mod5-v1_23.qasm
+Reverse file : ../reverse/4mod5-v1_23.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 18
+# add_swap_num: 0
+# add_bridge_num: 6
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.005      0.001
+Initial & Main Mapping         0.006      0.001
+Post-processing                0.006      0.002
+END Program                    0.012      0.003
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 6.80469 MB
+./FSQM ../example/4mod5-v1_23.qasm ../output/4mod5-v1_23.qasm ../reverse/4mod5-v1_23.qasm 0.8 9 3 | tee ../log/4mod5-v1_23.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+4mod5-v1_23         |       0 |       0 |      18 |   0.003 | division by zero
+Running: python3 run.py 9
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/4mod5-v1_24.qasm
+Output file  : ../output/4mod5-v1_24.qasm
+Reverse file : ../reverse/4mod5-v1_24.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 0
+# add_swap_num: 0
+# add_bridge_num: 0
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.002      0.001
+Initial & Main Mapping         0.003      0.001
+Post-processing                0.004      0.002
+END Program                    0.005      0.002
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 6.79297 MB
+./FSQM ../example/4mod5-v1_24.qasm ../output/4mod5-v1_24.qasm ../reverse/4mod5-v1_24.qasm 0.8 9 3 | tee ../log/4mod5-v1_24.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+4mod5-v1_24         |       0 |       0 |       0 |   0.002 | division by zero
+Running: python3 run.py 10
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/adder_n10.qasm
+Output file  : ../output/adder_n10.qasm
+Reverse file : ../reverse/adder_n10.qasm
+Undefined gate: sx
+Undefined gate: a
+ERROR: unexpected statement: started with [!
+./FSQM ../example/adder_n10.qasm ../output/adder_n10.qasm ../reverse/adder_n10.qasm 0.8 9 3 | tee ../log/adder_n10.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+adder_n10           |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 11
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/adder_n4.qasm
+Output file  : ../output/adder_n4.qasm
+Reverse file : ../reverse/adder_n4.qasm
+Undefined gate: sx
+Undefined gate: q
+ERROR: unexpected statement: started with [!
+./FSQM ../example/adder_n4.qasm ../output/adder_n4.qasm ../reverse/adder_n4.qasm 0.8 9 3 | tee ../log/adder_n4.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+adder_n4            |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 12
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/adr4_197.qasm
+Output file  : ../output/adr4_197.qasm
+Reverse file : ../reverse/adr4_197.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 972
+# add_swap_num: 185
+# add_bridge_num: 139
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.057      0.022
+Initial & Main Mapping         0.090      0.035
+Post-processing                0.179      0.075
+END Program                    0.196      0.083
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 9.40625 MB
+./FSQM ../example/adr4_197.qasm ../output/adr4_197.qasm ../reverse/adr4_197.qasm 0.8 9 3 | tee ../log/adr4_197.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+adr4_197            |    1224 |   0.218 |     972 |   0.083 | 0.794118
+Running: python3 run.py 13
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/alu-bdd_288.qasm
+Output file  : ../output/alu-bdd_288.qasm
+Reverse file : ../reverse/alu-bdd_288.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 21
+# add_swap_num: 0
+# add_bridge_num: 7
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.003      0.001
+Initial & Main Mapping         0.004      0.001
+Post-processing                0.005      0.002
+END Program                    0.013      0.003
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 6.80469 MB
+./FSQM ../example/alu-bdd_288.qasm ../output/alu-bdd_288.qasm ../reverse/alu-bdd_288.qasm 0.8 9 3 | tee ../log/alu-bdd_288.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+alu-bdd_288         |       0 |       0 |      21 |   0.003 | division by zero
+Running: python3 run.py 14
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/alu-v0_27.qasm
+Output file  : ../output/alu-v0_27.qasm
+Reverse file : ../reverse/alu-v0_27.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 3
+# add_swap_num: 0
+# add_bridge_num: 1
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.009      0.001
+Initial & Main Mapping         0.010      0.001
+Post-processing                0.010      0.002
+END Program                    0.011      0.002
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 6.79297 MB
+./FSQM ../example/alu-v0_27.qasm ../output/alu-v0_27.qasm ../reverse/alu-v0_27.qasm 0.8 9 3 | tee ../log/alu-v0_27.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+alu-v0_27           |       3 |       0 |       3 |   0.002 | 1.0
+Running: python3 run.py 15
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/alu-v0_27_example.qasm
+Output file  : ../output/alu-v0_27_example.qasm
+Reverse file : ../reverse/alu-v0_27_example.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 3
+# add_swap_num: 0
+# add_bridge_num: 1
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.002      0.001
+Initial & Main Mapping         0.003      0.001
+Post-processing                0.003      0.001
+END Program                    0.004      0.002
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 6.79297 MB
+./FSQM ../example/alu-v0_27_example.qasm ../output/alu-v0_27_example.qasm ../reverse/alu-v0_27_example.qasm 0.8 9 3 | tee ../log/alu-v0_27_example.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+alu-v0_27_example   |       0 |       0 |       3 |   0.002 | division by zero
+Running: python3 run.py 16
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/alu-v1_28.qasm
+Output file  : ../output/alu-v1_28.qasm
+Reverse file : ../reverse/alu-v1_28.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 3
+# add_swap_num: 0
+# add_bridge_num: 1
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.007      0.002
+Initial & Main Mapping         0.008      0.002
+Post-processing                0.008      0.003
+END Program                    0.009      0.003
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 6.79297 MB
+./FSQM ../example/alu-v1_28.qasm ../output/alu-v1_28.qasm ../reverse/alu-v1_28.qasm 0.8 9 3 | tee ../log/alu-v1_28.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+alu-v1_28           |       0 |       0 |       3 |   0.003 | division by zero
+Running: python3 run.py 17
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/alu-v1_29.qasm
+Output file  : ../output/alu-v1_29.qasm
+Reverse file : ../reverse/alu-v1_29.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 3
+# add_swap_num: 0
+# add_bridge_num: 1
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.003      0.001
+Initial & Main Mapping         0.003      0.001
+Post-processing                0.003      0.001
+END Program                    0.005      0.003
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 6.79297 MB
+./FSQM ../example/alu-v1_29.qasm ../output/alu-v1_29.qasm ../reverse/alu-v1_29.qasm 0.8 9 3 | tee ../log/alu-v1_29.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+alu-v1_29           |       0 |       0 |       3 |   0.003 | division by zero
+Running: python3 run.py 18
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/alu-v2_33.qasm
+Output file  : ../output/alu-v2_33.qasm
+Reverse file : ../reverse/alu-v2_33.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 3
+# add_swap_num: 0
+# add_bridge_num: 1
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.004      0.001
+Initial & Main Mapping         0.005      0.001
+Post-processing                0.005      0.002
+END Program                    0.006      0.002
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 6.79297 MB
+./FSQM ../example/alu-v2_33.qasm ../output/alu-v2_33.qasm ../reverse/alu-v2_33.qasm 0.8 9 3 | tee ../log/alu-v2_33.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+alu-v2_33           |       0 |       0 |       3 |   0.002 | division by zero
+Running: python3 run.py 19
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/alu-v3_34.qasm
+Output file  : ../output/alu-v3_34.qasm
+Reverse file : ../reverse/alu-v3_34.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 9
+# add_swap_num: 0
+# add_bridge_num: 3
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.002      0.001
+Initial & Main Mapping         0.002      0.001
+Post-processing                0.003      0.002
+END Program                    0.003      0.002
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 6.80859 MB
+./FSQM ../example/alu-v3_34.qasm ../output/alu-v3_34.qasm ../reverse/alu-v3_34.qasm 0.8 9 3 | tee ../log/alu-v3_34.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+alu-v3_34           |       0 |       0 |       9 |   0.002 | division by zero
+Running: python3 run.py 20
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/alu-v3_35.qasm
+Output file  : ../output/alu-v3_35.qasm
+Reverse file : ../reverse/alu-v3_35.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 3
+# add_swap_num: 0
+# add_bridge_num: 1
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.002      0.001
+Initial & Main Mapping         0.003      0.001
+Post-processing                0.003      0.001
+END Program                    0.003      0.002
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 6.79297 MB
+./FSQM ../example/alu-v3_35.qasm ../output/alu-v3_35.qasm ../reverse/alu-v3_35.qasm 0.8 9 3 | tee ../log/alu-v3_35.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+alu-v3_35           |       0 |       0 |       3 |   0.002 | division by zero
+Running: python3 run.py 21
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/alu-v4_37.qasm
+Output file  : ../output/alu-v4_37.qasm
+Reverse file : ../reverse/alu-v4_37.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 3
+# add_swap_num: 0
+# add_bridge_num: 1
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.003      0.001
+Initial & Main Mapping         0.004      0.001
+Post-processing                0.004      0.001
+END Program                    0.005      0.002
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 6.79297 MB
+./FSQM ../example/alu-v4_37.qasm ../output/alu-v4_37.qasm ../reverse/alu-v4_37.qasm 0.8 9 3 | tee ../log/alu-v4_37.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+alu-v4_37           |       0 |       0 |       3 |   0.002 | division by zero
+Running: python3 run.py 22
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/basis_change_n3.qasm
+Output file  : ../output/basis_change_n3.qasm
+Reverse file : ../reverse/basis_change_n3.qasm
+Undefined gate: sx
+Undefined gate: q
+ERROR: unexpected statement: started with [!
+./FSQM ../example/basis_change_n3.qasm ../output/basis_change_n3.qasm ../reverse/basis_change_n3.qasm 0.8 9 3 | tee ../log/basis_change_n3.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+basis_change_n3     |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 23
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/bell_n4.qasm
+Output file  : ../output/bell_n4.qasm
+Reverse file : ../reverse/bell_n4.qasm
+Undefined gate: sx
+Undefined gate: q
+ERROR: unexpected statement: started with [!
+./FSQM ../example/bell_n4.qasm ../output/bell_n4.qasm ../reverse/bell_n4.qasm 0.8 9 3 | tee ../log/bell_n4.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+bell_n4             |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 24
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/bv_n10.qasm
+Output file  : ../output/bv_n10.qasm
+Reverse file : ../reverse/bv_n10.qasm
+Warning: Measurements currently not supported
+Warning: Measurements currently not supported
+Warning: Measurements currently not supported
+Warning: Measurements currently not supported
+Warning: Measurements currently not supported
+Warning: Measurements currently not supported
+Warning: Measurements currently not supported
+Warning: Measurements currently not supported
+Warning: Measurements currently not supported
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 9
+# add_swap_num: 3
+# add_bridge_num: 0
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.003      0.001
+Initial & Main Mapping         0.005      0.002
+Post-processing                0.005      0.003
+END Program                    0.006      0.003
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 6.80469 MB
+./FSQM ../example/bv_n10.qasm ../output/bv_n10.qasm ../reverse/bv_n10.qasm 0.8 9 3 | tee ../log/bv_n10.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+bv_n10              |       0 |       0 |       9 |   0.003 | division by zero
+Running: python3 run.py 25
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/cat_state_n22.qasm
+Output file  : ../output/cat_state_n22.qasm
+Reverse file : ../reverse/cat_state_n22.qasm
+Undefined gate: sx
+Undefined gate: q
+ERROR: unexpected statement: started with [!
+./FSQM ../example/cat_state_n22.qasm ../output/cat_state_n22.qasm ../reverse/cat_state_n22.qasm 0.8 9 3 | tee ../log/cat_state_n22.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+cat_state_n22       |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 26
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/cat_state_n4.qasm
+Output file  : ../output/cat_state_n4.qasm
+Reverse file : ../reverse/cat_state_n4.qasm
+Undefined gate: sx
+Undefined gate: bits
+ERROR: unexpected statement: started with [!
+./FSQM ../example/cat_state_n4.qasm ../output/cat_state_n4.qasm ../reverse/cat_state_n4.qasm 0.8 9 3 | tee ../log/cat_state_n4.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+cat_state_n4        |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 27
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/cc_n10.qasm
+Output file  : ../output/cc_n10.qasm
+Reverse file : ../reverse/cc_n10.qasm
+Warning: Measurements currently not supported
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 9
+# add_swap_num: 3
+# add_bridge_num: 0
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.004      0.001
+Initial & Main Mapping         0.005      0.002
+Post-processing                0.005      0.002
+END Program                    0.006      0.003
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 6.80469 MB
+./FSQM ../example/cc_n10.qasm ../output/cc_n10.qasm ../reverse/cc_n10.qasm 0.8 9 3 | tee ../log/cc_n10.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+cc_n10              |       0 |       0 |       9 |   0.003 | division by zero
+Running: python3 run.py 28
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/cm152a_212.qasm
+Output file  : ../output/cm152a_212.qasm
+Reverse file : ../reverse/cm152a_212.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 180
+# add_swap_num: 10
+# add_bridge_num: 50
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.025      0.008
+Initial & Main Mapping         0.034      0.010
+Post-processing                0.044      0.015
+END Program                    0.059      0.019
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 7.78516 MB
+./FSQM ../example/cm152a_212.qasm ../output/cm152a_212.qasm ../reverse/cm152a_212.qasm 0.8 9 3 | tee ../log/cm152a_212.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+cm152a_212          |       0 |       0 |     180 |   0.019 | division by zero
+Running: python3 run.py 29
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/cm42a_207.qasm
+Output file  : ../output/cm42a_207.qasm
+Reverse file : ../reverse/cm42a_207.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 366
+# add_swap_num: 22
+# add_bridge_num: 100
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.033      0.013
+Initial & Main Mapping         0.055      0.019
+Post-processing                0.078      0.030
+END Program                    0.093      0.035
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 8.11719 MB
+./FSQM ../example/cm42a_207.qasm ../output/cm42a_207.qasm ../reverse/cm42a_207.qasm 0.8 9 3 | tee ../log/cm42a_207.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+cm42a_207           |       0 |       0 |     366 |   0.035 | division by zero
+Running: python3 run.py 30
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/cnt3-5_179.qasm
+Output file  : ../output/cnt3-5_179.qasm
+Reverse file : ../reverse/cnt3-5_179.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 18
+# add_swap_num: 2
+# add_bridge_num: 4
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.006      0.002
+Initial & Main Mapping         0.014      0.005
+Post-processing                0.015      0.006
+END Program                    0.027      0.007
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 6.80859 MB
+./FSQM ../example/cnt3-5_179.qasm ../output/cnt3-5_179.qasm ../reverse/cnt3-5_179.qasm 0.8 9 3 | tee ../log/cnt3-5_179.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+cnt3-5_179          |       0 |       0 |      18 |   0.007 | division by zero
+Running: python3 run.py 31
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/cnt3-5_180.qasm
+Output file  : ../output/cnt3-5_180.qasm
+Reverse file : ../reverse/cnt3-5_180.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 102
+# add_swap_num: 11
+# add_bridge_num: 23
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.005      0.002
+Initial & Main Mapping         0.019      0.007
+Post-processing                0.022      0.008
+END Program                    0.025      0.011
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 7.16797 MB
+./FSQM ../example/cnt3-5_180.qasm ../output/cnt3-5_180.qasm ../reverse/cnt3-5_180.qasm 0.8 9 3 | tee ../log/cnt3-5_180.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+cnt3-5_180          |       0 |       0 |     102 |   0.011 | division by zero
+Running: python3 run.py 32
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/co14_215.qasm
+Output file  : ../output/co14_215.qasm
+Reverse file : ../reverse/co14_215.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 4737
+# add_swap_num: 364
+# add_bridge_num: 1215
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.244      0.110
+Initial & Main Mapping         0.422      0.195
+Post-processing                0.860      0.407
+END Program                    0.919      0.435
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 18.6328 MB
+./FSQM ../example/co14_215.qasm ../output/co14_215.qasm ../reverse/co14_215.qasm 0.8 9 3 | tee ../log/co14_215.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+co14_215            |    5061 |   1.062 |    4737 |   0.435 | 0.935981
+Running: python3 run.py 33
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/cycle10_2_110.qasm
+Output file  : ../output/cycle10_2_110.qasm
+Reverse file : ../reverse/cycle10_2_110.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 1536
+# add_swap_num: 211
+# add_bridge_num: 301
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.077      0.034
+Initial & Main Mapping         0.134      0.057
+Post-processing                0.254      0.115
+END Program                    0.290      0.131
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 11.75 MB
+./FSQM ../example/cycle10_2_110.qasm ../output/cycle10_2_110.qasm ../reverse/cycle10_2_110.qasm 0.8 9 3 | tee ../log/cycle10_2_110.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+cycle10_2_110       |    1968 |   0.348 |    1536 |   0.131 | 0.780488
+Running: python3 run.py 34
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/dc2_222.qasm
+Output file  : ../output/dc2_222.qasm
+Reverse file : ../reverse/dc2_222.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 2784
+# add_swap_num: 378
+# add_bridge_num: 550
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.124      0.058
+Initial & Main Mapping         0.236      0.109
+Post-processing                0.461      0.214
+END Program                    0.504      0.235
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 15.8516 MB
+./FSQM ../example/dc2_222.qasm ../output/dc2_222.qasm ../reverse/dc2_222.qasm 0.8 9 3 | tee ../log/dc2_222.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+dc2_222             |       0 |       0 |    2784 |   0.235 | division by zero
+Running: python3 run.py 35
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/decod24-bdd_294.qasm
+Output file  : ../output/decod24-bdd_294.qasm
+Reverse file : ../reverse/decod24-bdd_294.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 12
+# add_swap_num: 0
+# add_bridge_num: 4
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.006      0.002
+Initial & Main Mapping         0.007      0.002
+Post-processing                0.007      0.003
+END Program                    0.021      0.003
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 6.80469 MB
+./FSQM ../example/decod24-bdd_294.qasm ../output/decod24-bdd_294.qasm ../reverse/decod24-bdd_294.qasm 0.8 9 3 | tee ../log/decod24-bdd_294.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+decod24-bdd_294     |       0 |       0 |      12 |   0.003 | division by zero
+Running: python3 run.py 36
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/decod24-v2_43.qasm
+Output file  : ../output/decod24-v2_43.qasm
+Reverse file : ../reverse/decod24-v2_43.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 0
+# add_swap_num: 0
+# add_bridge_num: 0
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.003      0.001
+Initial & Main Mapping         0.003      0.002
+Post-processing                0.003      0.002
+END Program                    0.012      0.002
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 6.80859 MB
+./FSQM ../example/decod24-v2_43.qasm ../output/decod24-v2_43.qasm ../reverse/decod24-v2_43.qasm 0.8 9 3 | tee ../log/decod24-v2_43.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+decod24-v2_43       |       0 |       0 |       0 |   0.002 | division by zero
+Running: python3 run.py 37
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/deutsch_n2.qasm
+Output file  : ../output/deutsch_n2.qasm
+Reverse file : ../reverse/deutsch_n2.qasm
+Undefined gate: sx
+Undefined gate: q
+ERROR: unexpected statement: started with [!
+./FSQM ../example/deutsch_n2.qasm ../output/deutsch_n2.qasm ../reverse/deutsch_n2.qasm 0.8 9 3 | tee ../log/deutsch_n2.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+deutsch_n2          |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 38
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/dnn_n2.qasm
+Output file  : ../output/dnn_n2.qasm
+Reverse file : ../reverse/dnn_n2.qasm
+Undefined gate: sx
+Undefined gate: q
+ERROR: unexpected statement: started with [!
+./FSQM ../example/dnn_n2.qasm ../output/dnn_n2.qasm ../reverse/dnn_n2.qasm 0.8 9 3 | tee ../log/dnn_n2.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+dnn_n2              |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 39
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/dnn_n8.qasm
+Output file  : ../output/dnn_n8.qasm
+Reverse file : ../reverse/dnn_n8.qasm
+Undefined gate: sx
+Undefined gate: q
+ERROR: unexpected statement: started with [!
+./FSQM ../example/dnn_n8.qasm ../output/dnn_n8.qasm ../reverse/dnn_n8.qasm 0.8 9 3 | tee ../log/dnn_n8.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+dnn_n8              |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 40
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/ex1_226.qasm
+Output file  : ../output/ex1_226.qasm
+Reverse file : ../reverse/ex1_226.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 0
+# add_swap_num: 0
+# add_bridge_num: 0
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.002      0.001
+Initial & Main Mapping         0.003      0.001
+Post-processing                0.003      0.001
+END Program                    0.004      0.002
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 6.67578 MB
+./FSQM ../example/ex1_226.qasm ../output/ex1_226.qasm ../reverse/ex1_226.qasm 0.8 9 3 | tee ../log/ex1_226.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+ex1_226             |       0 |       0 |       0 |   0.002 | division by zero
+Running: python3 run.py 41
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/fredkin_n3.qasm
+Output file  : ../output/fredkin_n3.qasm
+Reverse file : ../reverse/fredkin_n3.qasm
+Undefined gate: sx
+Undefined gate: q
+ERROR: unexpected statement: started with [!
+./FSQM ../example/fredkin_n3.qasm ../output/fredkin_n3.qasm ../reverse/fredkin_n3.qasm 0.8 9 3 | tee ../log/fredkin_n3.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+fredkin_n3          |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 42
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/ghz_state_n23.qasm
+Output file  : ../output/ghz_state_n23.qasm
+Reverse file : ../reverse/ghz_state_n23.qasm
+Undefined gate: sx
+Undefined gate: q
+ERROR: unexpected statement: started with [!
+./FSQM ../example/ghz_state_n23.qasm ../output/ghz_state_n23.qasm ../reverse/ghz_state_n23.qasm 0.8 9 3 | tee ../log/ghz_state_n23.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+ghz_state_n23       |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 43
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/graycode6_47.qasm
+Output file  : ../output/graycode6_47.qasm
+Reverse file : ../reverse/graycode6_47.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 0
+# add_swap_num: 0
+# add_bridge_num: 0
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.003      0.001
+Initial & Main Mapping         0.003      0.001
+Post-processing                0.003      0.001
+END Program                    0.004      0.001
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 6.67578 MB
+./FSQM ../example/graycode6_47.qasm ../output/graycode6_47.qasm ../reverse/graycode6_47.qasm 0.8 9 3 | tee ../log/graycode6_47.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+graycode6_47        |       0 |       0 |       0 |   0.001 | division by zero
+Running: python3 run.py 44
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/grover_n2.qasm
+Output file  : ../output/grover_n2.qasm
+Reverse file : ../reverse/grover_n2.qasm
+Undefined gate: sx
+Undefined gate: q
+ERROR: unexpected statement: started with [!
+./FSQM ../example/grover_n2.qasm ../output/grover_n2.qasm ../reverse/grover_n2.qasm 0.8 9 3 | tee ../log/grover_n2.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+grover_n2           |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 45
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/hhl_n7.qasm
+Output file  : ../output/hhl_n7.qasm
+Reverse file : ../reverse/hhl_n7.qasm
+Undefined gate: sx
+Undefined gate: q1
+ERROR: unexpected statement: started with [!
+./FSQM ../example/hhl_n7.qasm ../output/hhl_n7.qasm ../reverse/hhl_n7.qasm 0.8 9 3 | tee ../log/hhl_n7.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+hhl_n7              |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 46
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/hs4_n4.qasm
+Output file  : ../output/hs4_n4.qasm
+Reverse file : ../reverse/hs4_n4.qasm
+Undefined gate: sx
+Undefined gate: q
+ERROR: unexpected statement: started with [!
+./FSQM ../example/hs4_n4.qasm ../output/hs4_n4.qasm ../reverse/hs4_n4.qasm 0.8 9 3 | tee ../log/hs4_n4.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+hs4_n4              |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 47
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/hwb9_119.qasm
+Output file  : ../output/hwb9_119.qasm
+Reverse file : ../reverse/hwb9_119.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 50427
+# add_swap_num: 6955
+# add_bridge_num: 9854
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   2.659      1.274
+Initial & Main Mapping         4.543      2.193
+Post-processing                9.875      4.819
+END Program                   10.567      5.067
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 169.609 MB
+./FSQM ../example/hwb9_119.qasm ../output/hwb9_119.qasm ../reverse/hwb9_119.qasm 0.8 9 3 | tee ../log/hwb9_119.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+hwb9_119            |   89355 |  12.909 |   50427 |   5.067 | 0.564344
+Running: python3 run.py 48
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/inc_237.qasm
+Output file  : ../output/inc_237.qasm
+Reverse file : ../reverse/inc_237.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 2952
+# add_swap_num: 353
+# add_bridge_num: 631
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.144      0.060
+Initial & Main Mapping         0.276      0.125
+Post-processing                0.495      0.230
+END Program                    0.536      0.244
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 16.1719 MB
+./FSQM ../example/inc_237.qasm ../output/inc_237.qasm ../reverse/inc_237.qasm 0.8 9 3 | tee ../log/inc_237.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+inc_237             |       0 |       0 |    2952 |   0.244 | division by zero
+Running: python3 run.py 49
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/ising_model_10.qasm
+Output file  : ../output/ising_model_10.qasm
+Reverse file : ../reverse/ising_model_10.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 0
+# add_swap_num: 0
+# add_bridge_num: 0
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.006      0.002
+Initial & Main Mapping         0.011      0.005
+Post-processing                0.011      0.005
+END Program                    0.012      0.006
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 6.99609 MB
+./FSQM ../example/ising_model_10.qasm ../output/ising_model_10.qasm ../reverse/ising_model_10.qasm 0.8 9 3 | tee ../log/ising_model_10.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+ising_model_10      |       0 |       0 |       0 |   0.006 | division by zero
+Running: python3 run.py 50
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/ising_model_13.qasm
+Output file  : ../output/ising_model_13.qasm
+Reverse file : ../reverse/ising_model_13.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 0
+# add_swap_num: 0
+# add_bridge_num: 0
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.015      0.006
+Initial & Main Mapping         0.016      0.007
+Post-processing                0.025      0.008
+END Program                    0.026      0.009
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 7.01953 MB
+./FSQM ../example/ising_model_13.qasm ../output/ising_model_13.qasm ../reverse/ising_model_13.qasm 0.8 9 3 | tee ../log/ising_model_13.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+ising_model_13      |       0 |       0 |       0 |   0.009 | division by zero
+Running: python3 run.py 51
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/ising_model_16.qasm
+Output file  : ../output/ising_model_16.qasm
+Reverse file : ../reverse/ising_model_16.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 0
+# add_swap_num: 0
+# add_bridge_num: 0
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.015      0.005
+Initial & Main Mapping         0.029      0.011
+Post-processing                0.030      0.011
+END Program                    0.031      0.012
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 7.21094 MB
+./FSQM ../example/ising_model_16.qasm ../output/ising_model_16.qasm ../reverse/ising_model_16.qasm 0.8 9 3 | tee ../log/ising_model_16.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+ising_model_16      |       0 |       0 |       0 |   0.012 | division by zero
+Running: python3 run.py 52
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/ising_n10.qasm
+Output file  : ../output/ising_n10.qasm
+Reverse file : ../reverse/ising_n10.qasm
+Undefined gate: sx
+Undefined gate: reg
+ERROR: unexpected statement: started with [!
+./FSQM ../example/ising_n10.qasm ../output/ising_n10.qasm ../reverse/ising_n10.qasm 0.8 9 3 | tee ../log/ising_n10.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+ising_n10           |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 53
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/ising_n26.qasm
+Output file  : ../output/ising_n26.qasm
+Reverse file : ../reverse/ising_n26.qasm
+Undefined gate: sx
+Undefined gate: q
+ERROR: unexpected statement: started with [!
+./FSQM ../example/ising_n26.qasm ../output/ising_n26.qasm ../reverse/ising_n26.qasm 0.8 9 3 | tee ../log/ising_n26.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+ising_n26           |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 54
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/iswap_n2.qasm
+Output file  : ../output/iswap_n2.qasm
+Reverse file : ../reverse/iswap_n2.qasm
+Undefined gate: sx
+Undefined gate: q
+ERROR: unexpected statement: started with [!
+./FSQM ../example/iswap_n2.qasm ../output/iswap_n2.qasm ../reverse/iswap_n2.qasm 0.8 9 3 | tee ../log/iswap_n2.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+iswap_n2            |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 55
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/knn_n25.qasm
+Output file  : ../output/knn_n25.qasm
+Reverse file : ../reverse/knn_n25.qasm
+Undefined gate: sx
+Undefined gate: q0
+ERROR: unexpected statement: started with [!
+./FSQM ../example/knn_n25.qasm ../output/knn_n25.qasm ../reverse/knn_n25.qasm 0.8 9 3 | tee ../log/knn_n25.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+knn_n25             |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 56
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/linearsolver_n3.qasm
+Output file  : ../output/linearsolver_n3.qasm
+Reverse file : ../reverse/linearsolver_n3.qasm
+Undefined gate: sx
+Undefined gate: q
+ERROR: unexpected statement: started with [!
+./FSQM ../example/linearsolver_n3.qasm ../output/linearsolver_n3.qasm ../reverse/linearsolver_n3.qasm 0.8 9 3 | tee ../log/linearsolver_n3.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+linearsolver_n3     |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 57
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/lpn_n5.qasm
+Output file  : ../output/lpn_n5.qasm
+Reverse file : ../reverse/lpn_n5.qasm
+Undefined gate: sx
+Undefined gate: q
+ERROR: unexpected statement: started with [!
+./FSQM ../example/lpn_n5.qasm ../output/lpn_n5.qasm ../reverse/lpn_n5.qasm 0.8 9 3 | tee ../log/lpn_n5.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+lpn_n5              |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 58
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/mini_alu_305.qasm
+Output file  : ../output/mini_alu_305.qasm
+Reverse file : ../reverse/mini_alu_305.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 60
+# add_swap_num: 0
+# add_bridge_num: 20
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.009      0.001
+Initial & Main Mapping         0.010      0.002
+Post-processing                0.011      0.004
+END Program                    0.019      0.004
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 6.9375 MB
+./FSQM ../example/mini_alu_305.qasm ../output/mini_alu_305.qasm ../reverse/mini_alu_305.qasm 0.8 9 3 | tee ../log/mini_alu_305.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+mini_alu_305        |       0 |       0 |      60 |   0.004 | division by zero
+Running: python3 run.py 59
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/misex1_241.qasm
+Output file  : ../output/misex1_241.qasm
+Reverse file : ../reverse/misex1_241.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 1065
+# add_swap_num: 171
+# add_bridge_num: 184
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.058      0.022
+Initial & Main Mapping         0.097      0.041
+Post-processing                0.170      0.081
+END Program                    0.209      0.087
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 10.7344 MB
+./FSQM ../example/misex1_241.qasm ../output/misex1_241.qasm ../reverse/misex1_241.qasm 0.8 9 3 | tee ../log/misex1_241.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+misex1_241          |    1098 |   0.249 |    1065 |   0.087 | 0.969945
+Running: python3 run.py 60
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/mod5mils_65.qasm
+Output file  : ../output/mod5mils_65.qasm
+Reverse file : ../reverse/mod5mils_65.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 0
+# add_swap_num: 0
+# add_bridge_num: 0
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.008      0.001
+Initial & Main Mapping         0.009      0.002
+Post-processing                0.009      0.002
+END Program                    0.011      0.003
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 6.79297 MB
+./FSQM ../example/mod5mils_65.qasm ../output/mod5mils_65.qasm ../reverse/mod5mils_65.qasm 0.8 9 3 | tee ../log/mod5mils_65.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+mod5mils_65         |       0 |       0 |       0 |   0.003 | division by zero
+Running: python3 run.py 61
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/multiply_n13.qasm
+Output file  : ../output/multiply_n13.qasm
+Reverse file : ../reverse/multiply_n13.qasm
+Undefined gate: sx
+Undefined gate: q
+ERROR: unexpected statement: started with [!
+./FSQM ../example/multiply_n13.qasm ../output/multiply_n13.qasm ../reverse/multiply_n13.qasm 0.8 9 3 | tee ../log/multiply_n13.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+multiply_n13        |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 62
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/pea_n5.qasm
+Output file  : ../output/pea_n5.qasm
+Reverse file : ../reverse/pea_n5.qasm
+Undefined gate: sx
+Undefined gate: q
+ERROR: unexpected statement: started with [!
+./FSQM ../example/pea_n5.qasm ../output/pea_n5.qasm ../reverse/pea_n5.qasm 0.8 9 3 | tee ../log/pea_n5.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+pea_n5              |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 63
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/pm1_249.qasm
+Output file  : ../output/pm1_249.qasm
+Reverse file : ../reverse/pm1_249.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 366
+# add_swap_num: 22
+# add_bridge_num: 100
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.029      0.013
+Initial & Main Mapping         0.036      0.014
+Post-processing                0.069      0.031
+END Program                    0.083      0.037
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 8.11719 MB
+./FSQM ../example/pm1_249.qasm ../output/pm1_249.qasm ../reverse/pm1_249.qasm 0.8 9 3 | tee ../log/pm1_249.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+pm1_249             |       0 |       0 |     366 |   0.037 | division by zero
+Running: python3 run.py 64
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/qaoa_n3.qasm
+Output file  : ../output/qaoa_n3.qasm
+Reverse file : ../reverse/qaoa_n3.qasm
+Undefined gate: sx
+Undefined gate: q
+ERROR: unexpected statement: started with [!
+./FSQM ../example/qaoa_n3.qasm ../output/qaoa_n3.qasm ../reverse/qaoa_n3.qasm 0.8 9 3 | tee ../log/qaoa_n3.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+qaoa_n3             |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 65
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/qaoa_n6.qasm
+Output file  : ../output/qaoa_n6.qasm
+Reverse file : ../reverse/qaoa_n6.qasm
+Undefined gate: sx
+Undefined gate: q
+ERROR: unexpected statement: started with [!
+./FSQM ../example/qaoa_n6.qasm ../output/qaoa_n6.qasm ../reverse/qaoa_n6.qasm 0.8 9 3 | tee ../log/qaoa_n6.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+qaoa_n6             |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 66
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/qec_en_n5.qasm
+Output file  : ../output/qec_en_n5.qasm
+Reverse file : ../reverse/qec_en_n5.qasm
+Undefined gate: sx
+Undefined gate: q
+ERROR: unexpected statement: started with [!
+./FSQM ../example/qec_en_n5.qasm ../output/qec_en_n5.qasm ../reverse/qec_en_n5.qasm 0.8 9 3 | tee ../log/qec_en_n5.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+qec_en_n5           |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 67
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/qft_10.qasm
+Output file  : ../output/qft_10.qasm
+Reverse file : ../reverse/qft_10.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 39
+# add_swap_num: 13
+# add_bridge_num: 0
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.007      0.001
+Initial & Main Mapping         0.009      0.002
+Post-processing                0.021      0.005
+END Program                    0.024      0.006
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 6.96875 MB
+./FSQM ../example/qft_10.qasm ../output/qft_10.qasm ../reverse/qft_10.qasm 0.8 9 3 | tee ../log/qft_10.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+qft_10              |      39 |   0.015 |      39 |   0.006 | 1.0
+Running: python3 run.py 68
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/qft_13.qasm
+Output file  : ../output/qft_13.qasm
+Reverse file : ../reverse/qft_13.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 105
+# add_swap_num: 35
+# add_bridge_num: 0
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.005      0.003
+Initial & Main Mapping         0.015      0.005
+Post-processing                0.028      0.011
+END Program                    0.032      0.012
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 7.05469 MB
+./FSQM ../example/qft_13.qasm ../output/qft_13.qasm ../reverse/qft_13.qasm 0.8 9 3 | tee ../log/qft_13.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+qft_13              |      96 |   0.031 |     105 |   0.012 | 1.09375
+Running: python3 run.py 69
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/qft_16.qasm
+Output file  : ../output/qft_16.qasm
+Reverse file : ../reverse/qft_16.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 147
+# add_swap_num: 49
+# add_bridge_num: 0
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.011      0.003
+Initial & Main Mapping         0.025      0.006
+Post-processing                0.043      0.017
+END Program                    0.058      0.024
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 7.28125 MB
+./FSQM ../example/qft_16.qasm ../output/qft_16.qasm ../reverse/qft_16.qasm 0.8 9 3 | tee ../log/qft_16.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+qft_16              |     192 |   0.062 |     147 |   0.024 | 0.765625
+Running: python3 run.py 70
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/qft_20.qasm
+Output file  : ../output/qft_20.qasm
+Reverse file : ../reverse/qft_20.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 423
+# add_swap_num: 96
+# add_bridge_num: 45
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.010      0.003
+Initial & Main Mapping         0.046      0.018
+Post-processing                0.085      0.036
+END Program                    0.100      0.046
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 7.50781 MB
+./FSQM ../example/qft_20.qasm ../output/qft_20.qasm ../reverse/qft_20.qasm 0.8 9 3 | tee ../log/qft_20.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+qft_20              |     360 |   0.109 |     423 |   0.046 | 1.175
+Running: python3 run.py 71
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/qft_n4.qasm
+Output file  : ../output/qft_n4.qasm
+Reverse file : ../reverse/qft_n4.qasm
+Undefined gate: sx
+Undefined gate: q
+ERROR: unexpected statement: started with [!
+./FSQM ../example/qft_n4.qasm ../output/qft_n4.qasm ../reverse/qft_n4.qasm 0.8 9 3 | tee ../log/qft_n4.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+qft_n4              |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 72
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/qpe_n9.qasm
+Output file  : ../output/qpe_n9.qasm
+Reverse file : ../reverse/qpe_n9.qasm
+Undefined gate: sx
+Undefined gate: q
+ERROR: unexpected statement: started with [!
+./FSQM ../example/qpe_n9.qasm ../output/qpe_n9.qasm ../reverse/qpe_n9.qasm 0.8 9 3 | tee ../log/qpe_n9.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+qpe_n9              |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 73
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/qram_n20.qasm
+Output file  : ../output/qram_n20.qasm
+Reverse file : ../reverse/qram_n20.qasm
+Undefined gate: sx
+Undefined gate: rout
+ERROR: unexpected statement: started with [!
+./FSQM ../example/qram_n20.qasm ../output/qram_n20.qasm ../reverse/qram_n20.qasm 0.8 9 3 | tee ../log/qram_n20.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+qram_n20            |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 74
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/quantumwalks_n2.qasm
+Output file  : ../output/quantumwalks_n2.qasm
+Reverse file : ../reverse/quantumwalks_n2.qasm
+Undefined gate: sx
+Undefined gate: q1
+ERROR: unexpected statement: started with [!
+./FSQM ../example/quantumwalks_n2.qasm ../output/quantumwalks_n2.qasm ../reverse/quantumwalks_n2.qasm 0.8 9 3 | tee ../log/quantumwalks_n2.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+quantumwalks_n2     |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 75
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/radd_250.qasm
+Output file  : ../output/radd_250.qasm
+Reverse file : ../reverse/radd_250.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 897
+# add_swap_num: 127
+# add_bridge_num: 172
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.054      0.020
+Initial & Main Mapping         0.084      0.032
+Post-processing                0.162      0.068
+END Program                    0.181      0.078
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 9.32031 MB
+./FSQM ../example/radd_250.qasm ../output/radd_250.qasm ../reverse/radd_250.qasm 0.8 9 3 | tee ../log/radd_250.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+radd_250            |    1047 |   0.186 |     897 |   0.078 | 0.856734
+Running: python3 run.py 76
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/rd32-v0_66.qasm
+Output file  : ../output/rd32-v0_66.qasm
+Reverse file : ../reverse/rd32-v0_66.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 6
+# add_swap_num: 0
+# add_bridge_num: 2
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.002      0.001
+Initial & Main Mapping         0.003      0.001
+Post-processing                0.003      0.001
+END Program                    0.004      0.002
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 6.79297 MB
+./FSQM ../example/rd32-v0_66.qasm ../output/rd32-v0_66.qasm ../reverse/rd32-v0_66.qasm 0.8 9 3 | tee ../log/rd32-v0_66.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+rd32-v0_66          |       0 |       0 |       6 |   0.002 | division by zero
+Running: python3 run.py 77
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/rd32-v1_68.qasm
+Output file  : ../output/rd32-v1_68.qasm
+Reverse file : ../reverse/rd32-v1_68.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 6
+# add_swap_num: 0
+# add_bridge_num: 2
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.002      0.000
+Initial & Main Mapping         0.003      0.001
+Post-processing                0.004      0.002
+END Program                    0.007      0.002
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 6.79297 MB
+./FSQM ../example/rd32-v1_68.qasm ../output/rd32-v1_68.qasm ../reverse/rd32-v1_68.qasm 0.8 9 3 | tee ../log/rd32-v1_68.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+rd32-v1_68          |       0 |       0 |       6 |   0.002 | division by zero
+Running: python3 run.py 78
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/rd53_138.qasm
+Output file  : ../output/rd53_138.qasm
+Reverse file : ../reverse/rd53_138.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 57
+# add_swap_num: 4
+# add_bridge_num: 15
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.006      0.002
+Initial & Main Mapping         0.007      0.004
+Post-processing                0.008      0.004
+END Program                    0.017      0.005
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 6.80859 MB
+./FSQM ../example/rd53_138.qasm ../output/rd53_138.qasm ../reverse/rd53_138.qasm 0.8 9 3 | tee ../log/rd53_138.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+rd53_138            |       0 |       0 |      57 |   0.005 | division by zero
+Running: python3 run.py 79
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/rd53_311.qasm
+Output file  : ../output/rd53_311.qasm
+Reverse file : ../reverse/rd53_311.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 69
+# add_swap_num: 4
+# add_bridge_num: 19
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.008      0.003
+Initial & Main Mapping         0.017      0.005
+Post-processing                0.019      0.006
+END Program                    0.026      0.008
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 7.04688 MB
+./FSQM ../example/rd53_311.qasm ../output/rd53_311.qasm ../reverse/rd53_311.qasm 0.8 9 3 | tee ../log/rd53_311.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+rd53_311            |       0 |       0 |      69 |   0.008 | division by zero
+Running: python3 run.py 80
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/rd73_140.qasm
+Output file  : ../output/rd73_140.qasm
+Reverse file : ../reverse/rd73_140.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 48
+# add_swap_num: 3
+# add_bridge_num: 13
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.013      0.002
+Initial & Main Mapping         0.015      0.002
+Post-processing                0.016      0.004
+END Program                    0.024      0.005
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 6.94141 MB
+./FSQM ../example/rd73_140.qasm ../output/rd73_140.qasm ../reverse/rd73_140.qasm 0.8 9 3 | tee ../log/rd73_140.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+rd73_140            |       0 |       0 |      48 |   0.005 | division by zero
+Running: python3 run.py 81
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/rd73_252.qasm
+Output file  : ../output/rd73_252.qasm
+Reverse file : ../reverse/rd73_252.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 1320
+# add_swap_num: 200
+# add_bridge_num: 240
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.074      0.028
+Initial & Main Mapping         0.127      0.057
+Post-processing                0.233      0.103
+END Program                    0.257      0.115
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 11.4844 MB
+./FSQM ../example/rd73_252.qasm ../output/rd73_252.qasm ../reverse/rd73_252.qasm 0.8 9 3 | tee ../log/rd73_252.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+rd73_252            |    2193 |   0.343 |    1320 |   0.115 | 0.601915
+Running: python3 run.py 82
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/rd84_142.qasm
+Output file  : ../output/rd84_142.qasm
+Reverse file : ../reverse/rd84_142.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 81
+# add_swap_num: 10
+# add_bridge_num: 17
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.004      0.002
+Initial & Main Mapping         0.008      0.003
+Post-processing                0.015      0.006
+END Program                    0.028      0.011
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 7.02344 MB
+./FSQM ../example/rd84_142.qasm ../output/rd84_142.qasm ../reverse/rd84_142.qasm 0.8 9 3 | tee ../log/rd84_142.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+rd84_142            |     108 |   0.046 |      81 |   0.011 | 0.75
+Running: python3 run.py 83
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/rd84_253.qasm
+Output file  : ../output/rd84_253.qasm
+Reverse file : ../reverse/rd84_253.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 3774
+# add_swap_num: 492
+# add_bridge_num: 766
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.176      0.077
+Initial & Main Mapping         0.323      0.150
+Post-processing                0.634      0.302
+END Program                    0.684      0.324
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 17.1484 MB
+./FSQM ../example/rd84_253.qasm ../output/rd84_253.qasm ../reverse/rd84_253.qasm 0.8 9 3 | tee ../log/rd84_253.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+rd84_253            |    5697 |   0.892 |    3774 |   0.324 | 0.662454
+Running: python3 run.py 84
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/simon_n6.qasm
+Output file  : ../output/simon_n6.qasm
+Reverse file : ../reverse/simon_n6.qasm
+Undefined gate: sx
+Undefined gate: q
+ERROR: unexpected statement: started with [!
+./FSQM ../example/simon_n6.qasm ../output/simon_n6.qasm ../reverse/simon_n6.qasm 0.8 9 3 | tee ../log/simon_n6.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+simon_n6            |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 85
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/sqn_258.qasm
+Output file  : ../output/sqn_258.qasm
+Reverse file : ../reverse/sqn_258.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 2277
+# add_swap_num: 213
+# add_bridge_num: 546
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.128      0.061
+Initial & Main Mapping         0.204      0.093
+Post-processing                0.385      0.183
+END Program                    0.432      0.203
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 14.8594 MB
+./FSQM ../example/sqn_258.qasm ../output/sqn_258.qasm ../reverse/sqn_258.qasm 0.8 9 3 | tee ../log/sqn_258.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+sqn_258             |    3057 |   0.563 |    2277 |   0.203 | 0.744848
+Running: python3 run.py 86
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/squar5_261.qasm
+Output file  : ../output/squar5_261.qasm
+Reverse file : ../reverse/squar5_261.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 483
+# add_swap_num: 87
+# add_bridge_num: 74
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.031      0.012
+Initial & Main Mapping         0.058      0.022
+Post-processing                0.086      0.035
+END Program                    0.106      0.045
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 8.19922 MB
+./FSQM ../example/squar5_261.qasm ../output/squar5_261.qasm ../reverse/squar5_261.qasm 0.8 9 3 | tee ../log/squar5_261.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+squar5_261          |       0 |       0 |     483 |   0.045 | division by zero
+Running: python3 run.py 87
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/square_root_7.qasm
+Output file  : ../output/square_root_7.qasm
+Reverse file : ../reverse/square_root_7.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 1512
+# add_swap_num: 181
+# add_bridge_num: 323
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.087      0.037
+Initial & Main Mapping         0.151      0.073
+Post-processing                0.320      0.154
+END Program                    0.351      0.163
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 12.2422 MB
+./FSQM ../example/square_root_7.qasm ../output/square_root_7.qasm ../reverse/square_root_7.qasm 0.8 9 3 | tee ../log/square_root_7.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+square_root_7       |    1788 |   0.406 |    1512 |   0.163 | 0.845638
+Running: python3 run.py 88
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/swap_test_n25.qasm
+Output file  : ../output/swap_test_n25.qasm
+Reverse file : ../reverse/swap_test_n25.qasm
+Undefined gate: sx
+Undefined gate: q0
+ERROR: unexpected statement: started with [!
+./FSQM ../example/swap_test_n25.qasm ../output/swap_test_n25.qasm ../reverse/swap_test_n25.qasm 0.8 9 3 | tee ../log/swap_test_n25.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+swap_test_n25       |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 89
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/sym6_145.qasm
+Output file  : ../output/sym6_145.qasm
+Reverse file : ../reverse/sym6_145.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 606
+# add_swap_num: 128
+# add_bridge_num: 74
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.046      0.019
+Initial & Main Mapping         0.079      0.036
+Post-processing                0.125      0.058
+END Program                    0.151      0.067
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 9.53906 MB
+./FSQM ../example/sym6_145.qasm ../output/sym6_145.qasm ../reverse/sym6_145.qasm 0.8 9 3 | tee ../log/sym6_145.qasm.05_13_07_06.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+sym6_145            |    1017 |   0.202 |     606 |   0.067 | 0.59587
+Running: python3 run.py 90
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/sym6_316.qasm
+Output file  : ../output/sym6_316.qasm
+Reverse file : ../reverse/sym6_316.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 108
+# add_swap_num: 4
+# add_bridge_num: 32
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.004      0.001
+Initial & Main Mapping         0.006      0.004
+Post-processing                0.008      0.005
+END Program                    0.028      0.007
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 7.01172 MB
+./FSQM ../example/sym6_316.qasm ../output/sym6_316.qasm ../reverse/sym6_316.qasm 0.8 9 3 | tee ../log/sym6_316.qasm.05_13_07_07.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+sym6_316            |       0 |       0 |     108 |   0.007 | division by zero
+Running: python3 run.py 91
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/sym9_146.qasm
+Output file  : ../output/sym9_146.qasm
+Reverse file : ../reverse/sym9_146.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 108
+# add_swap_num: 7
+# add_bridge_num: 29
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.011      0.003
+Initial & Main Mapping         0.014      0.003
+Post-processing                0.016      0.006
+END Program                    0.024      0.009
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 7.01172 MB
+./FSQM ../example/sym9_146.qasm ../output/sym9_146.qasm ../reverse/sym9_146.qasm 0.8 9 3 | tee ../log/sym9_146.qasm.05_13_07_07.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+sym9_146            |       0 |       0 |     108 |   0.009 | division by zero
+Running: python3 run.py 92
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/sym9_193.qasm
+Output file  : ../output/sym9_193.qasm
+Reverse file : ../reverse/sym9_193.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 9234
+# add_swap_num: 1027
+# add_bridge_num: 2051
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.440      0.207
+Initial & Main Mapping         0.750      0.355
+Post-processing                1.534      0.742
+END Program                    1.670      0.794
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 30.0938 MB
+./FSQM ../example/sym9_193.qasm ../output/sym9_193.qasm ../reverse/sym9_193.qasm 0.8 9 3 | tee ../log/sym9_193.qasm.05_13_07_07.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+sym9_193            |   13746 |   2.091 |    9234 |   0.794 | 0.671759
+Running: python3 run.py 93
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/sys6-v0_111.qasm
+Output file  : ../output/sys6-v0_111.qasm
+Reverse file : ../reverse/sys6-v0_111.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 72
+# add_swap_num: 2
+# add_bridge_num: 22
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.004      0.001
+Initial & Main Mapping         0.006      0.002
+Post-processing                0.008      0.004
+END Program                    0.023      0.007
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 6.95312 MB
+./FSQM ../example/sys6-v0_111.qasm ../output/sys6-v0_111.qasm ../reverse/sys6-v0_111.qasm 0.8 9 3 | tee ../log/sys6-v0_111.qasm.05_13_07_07.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+sys6-v0_111         |       0 |       0 |      72 |   0.007 | division by zero
+Running: python3 run.py 94
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/system9.qasm
+Output file  : ../output/system9.qasm
+Reverse file : ../reverse/system9.qasm
+ERROR: unexpected statement: started with ;!
+./FSQM ../example/system9.qasm ../output/system9.qasm ../reverse/system9.qasm 0.8 9 3 | tee ../log/system9.qasm.05_13_07_07.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+system9             |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 95
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/teleportation_n3.qasm
+Output file  : ../output/teleportation_n3.qasm
+Reverse file : ../reverse/teleportation_n3.qasm
+Undefined gate: sx
+Undefined gate: q
+ERROR: unexpected statement: started with [!
+./FSQM ../example/teleportation_n3.qasm ../output/teleportation_n3.qasm ../reverse/teleportation_n3.qasm 0.8 9 3 | tee ../log/teleportation_n3.qasm.05_13_07_07.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+teleportation_n3    |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 96
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/test1.qasm
+Output file  : ../output/test1.qasm
+Reverse file : ../reverse/test1.qasm
+ERROR: unexpected statement: started with ;!
+./FSQM ../example/test1.qasm ../output/test1.qasm ../reverse/test1.qasm 0.8 9 3 | tee ../log/test1.qasm.05_13_07_07.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+test1               |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 97
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/test2.qasm
+Output file  : ../output/test2.qasm
+Reverse file : ../reverse/test2.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+./FSQM ../example/test2.qasm ../output/test2.qasm ../reverse/test2.qasm 0.8 9 3 | tee ../log/test2.qasm.05_13_07_07.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+test2               |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 98
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/test3.qasm
+Output file  : ../output/test3.qasm
+Reverse file : ../reverse/test3.qasm
+ERROR: unexpected statement: started with ;!
+./FSQM ../example/test3.qasm ../output/test3.qasm ../reverse/test3.qasm 0.8 9 3 | tee ../log/test3.qasm.05_13_07_07.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+test3               |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 99
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/toffoli_n3.qasm
+Output file  : ../output/toffoli_n3.qasm
+Reverse file : ../reverse/toffoli_n3.qasm
+Undefined gate: sx
+Undefined gate: a
+ERROR: unexpected statement: started with [!
+./FSQM ../example/toffoli_n3.qasm ../output/toffoli_n3.qasm ../reverse/toffoli_n3.qasm 0.8 9 3 | tee ../log/toffoli_n3.qasm.05_13_07_07.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+toffoli_n3          |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 100
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/urf4_187.qasm
+Output file  : ../output/urf4_187.qasm
+Reverse file : ../reverse/urf4_187.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 119166
+# add_swap_num: 16826
+# add_bridge_num: 22896
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   6.594      3.235
+Initial & Main Mapping        11.035      5.392
+Post-processing               25.203     12.412
+END Program                   26.828     12.990
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 349.492 MB
+./FSQM ../example/urf4_187.qasm ../output/urf4_187.qasm ../reverse/urf4_187.qasm 0.8 9 3 | tee ../log/urf4_187.qasm.05_13_07_07.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+urf4_187            |  168366 |   38.42 |  119166 |  12.990 | 0.707779
+Running: python3 run.py 101
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/urf5_158.qasm
+Output file  : ../output/urf5_158.qasm
+Reverse file : ../reverse/urf5_158.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 47079
+# add_swap_num: 6538
+# add_bridge_num: 9155
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   2.042      0.998
+Initial & Main Mapping         3.427      1.686
+Post-processing                7.726      3.819
+END Program                    8.302      4.017
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 155.453 MB
+./FSQM ../example/urf5_158.qasm ../output/urf5_158.qasm ../reverse/urf5_158.qasm 0.8 9 3 | tee ../log/urf5_158.qasm.05_13_07_07.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+urf5_158            |   58947 |   9.312 |   47079 |   4.017 | 0.798667
+Running: python3 run.py 102
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/variational_n4.qasm
+Output file  : ../output/variational_n4.qasm
+Reverse file : ../reverse/variational_n4.qasm
+Undefined gate: sx
+Undefined gate: q
+ERROR: unexpected statement: started with [!
+./FSQM ../example/variational_n4.qasm ../output/variational_n4.qasm ../reverse/variational_n4.qasm 0.8 9 3 | tee ../log/variational_n4.qasm.05_13_07_07.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+variational_n4      |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 103
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/vqe_n4.qasm
+Output file  : ../output/vqe_n4.qasm
+Reverse file : ../reverse/vqe_n4.qasm
+Undefined gate: sx
+Undefined gate: q
+ERROR: unexpected statement: started with [!
+./FSQM ../example/vqe_n4.qasm ../output/vqe_n4.qasm ../reverse/vqe_n4.qasm 0.8 9 3 | tee ../log/vqe_n4.qasm.05_13_07_07.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+vqe_n4              |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 104
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/wstate_n27.qasm
+Output file  : ../output/wstate_n27.qasm
+Reverse file : ../reverse/wstate_n27.qasm
+Undefined gate: sx
+Undefined gate: q
+ERROR: unexpected statement: started with [!
+./FSQM ../example/wstate_n27.qasm ../output/wstate_n27.qasm ../reverse/wstate_n27.qasm 0.8 9 3 | tee ../log/wstate_n27.qasm.05_13_07_07.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+wstate_n27          |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 105
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/wstate_n3.qasm
+Output file  : ../output/wstate_n3.qasm
+Reverse file : ../reverse/wstate_n3.qasm
+Undefined gate: sx
+Undefined gate: q
+ERROR: unexpected statement: started with [!
+./FSQM ../example/wstate_n3.qasm ../output/wstate_n3.qasm ../reverse/wstate_n3.qasm 0.8 9 3 | tee ../log/wstate_n3.qasm.05_13_07_07.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+wstate_n3           |       0 |       0 |       0 |       0 | division by zero
+Running: python3 run.py 106
+
+===========================================================================
+          FSQM (A fast and scalable qubit mapping) by Sunghye Park         
+                                                      Minhyuk Kweon        
+===========================================================================
+
+
+	================== 1. Circuit parsing ========================
+*** Option ***
+Input file   : ../example/z4_268.qasm
+Output file  : ../output/z4_268.qasm
+Reverse file : ../reverse/z4_268.qasm
+
+	============= 2. Circuit mapping (1st mapping) ===============
+
+	============= 3. Post Processing (Nth mapping) ===============
+*** Best Final Circuit ***
+# add_cnot_num: 651
+# add_swap_num: 147
+# add_bridge_num: 70
+
+
+*** Time & Memory Measure ***
+tasks                          Wtime      Ctime
+QASM parsing                   0.047      0.018
+Initial & Main Mapping         0.078      0.030
+Post-processing                0.151      0.059
+END Program                    0.177      0.067
+
+----------------------------------------
+### VmPeak         FDSize:	64
+### Memory Usage           : 9.28516 MB
+./FSQM ../example/z4_268.qasm ../output/z4_268.qasm ../reverse/z4_268.qasm 0.8 9 3 | tee ../log/z4_268.qasm.05_13_07_07.log
+ 
+ 
+----------------------------- Result ---------------------------------------
+                    |       TCAD        |                 Ours              
+  bench_name        |  #CNOT  | RunTime |  #CNOT  | RunTime | improve
+----------------------------------------------------------------------------
+z4_268              |     855 |   0.202 |     651 |   0.067 | 0.761404

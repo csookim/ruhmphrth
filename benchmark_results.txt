@@ -1,0 +1,321 @@
+Running benchmark on 4gt11_83
+We reuse 2 qubits, and now a total of 3 logical qubits are used.
+---------------------------------
+Running benchmark on 4gt11_84
+We reuse 1 qubits, and now a total of 3 logical qubits are used.
+---------------------------------
+Running benchmark on 4gt13_92
+We reuse 0 qubits, and now a total of 5 logical qubits are used.
+---------------------------------
+Running benchmark on 4mod5-bdd_287
+We reuse 3 qubits, and now a total of 4 logical qubits are used.
+---------------------------------
+Running benchmark on 4mod5-v0_18
+We reuse 1 qubits, and now a total of 4 logical qubits are used.
+---------------------------------
+Running benchmark on 4mod5-v0_19
+We reuse 2 qubits, and now a total of 3 logical qubits are used.
+---------------------------------
+Running benchmark on 4mod5-v0_20
+We reuse 2 qubits, and now a total of 3 logical qubits are used.
+---------------------------------
+Running benchmark on 4mod5-v1_22
+We reuse 2 qubits, and now a total of 3 logical qubits are used.
+---------------------------------
+Running benchmark on 4mod5-v1_23
+We reuse 1 qubits, and now a total of 4 logical qubits are used.
+---------------------------------
+Running benchmark on 4mod5-v1_24
+We reuse 1 qubits, and now a total of 4 logical qubits are used.
+---------------------------------
+Running benchmark on adder_n10
+We reuse 0 qubits, and now a total of 10 logical qubits are used.
+---------------------------------
+Running benchmark on adder_n4
+We reuse 0 qubits, and now a total of 4 logical qubits are used.
+---------------------------------
+Running benchmark on adr4_197
+We reuse 0 qubits, and now a total of 13 logical qubits are used.
+---------------------------------
+Running benchmark on alu-bdd_288
+We reuse 2 qubits, and now a total of 5 logical qubits are used.
+---------------------------------
+Running benchmark on alu-v0_27
+We reuse 1 qubits, and now a total of 4 logical qubits are used.
+---------------------------------
+Running benchmark on alu-v0_27_example
+We reuse 1 qubits, and now a total of 4 logical qubits are used.
+---------------------------------
+Running benchmark on alu-v1_28
+We reuse 1 qubits, and now a total of 4 logical qubits are used.
+---------------------------------
+Running benchmark on alu-v1_29
+We reuse 1 qubits, and now a total of 4 logical qubits are used.
+---------------------------------
+Running benchmark on alu-v2_33
+We reuse 1 qubits, and now a total of 4 logical qubits are used.
+---------------------------------
+Running benchmark on alu-v3_34
+We reuse 1 qubits, and now a total of 4 logical qubits are used.
+---------------------------------
+Running benchmark on alu-v3_35
+We reuse 1 qubits, and now a total of 4 logical qubits are used.
+---------------------------------
+Running benchmark on alu-v4_37
+We reuse 1 qubits, and now a total of 4 logical qubits are used.
+---------------------------------
+Running benchmark on basis_change_n3
+We reuse 0 qubits, and now a total of 3 logical qubits are used.
+---------------------------------
+Running benchmark on bell_n4
+We reuse 1 qubits, and now a total of 3 logical qubits are used.
+---------------------------------
+Running benchmark on bv_n10
+We reuse 8 qubits, and now a total of 2 logical qubits are used.
+---------------------------------
+Running benchmark on cat_state_n22
+We reuse 0 qubits, and now a total of 22 logical qubits are used.
+---------------------------------
+Running benchmark on cat_state_n4
+We reuse 2 qubits, and now a total of 2 logical qubits are used.
+---------------------------------
+Running benchmark on cc_n10
+We reuse 8 qubits, and now a total of 2 logical qubits are used.
+---------------------------------
+Running benchmark on cm152a_212
+We reuse 4 qubits, and now a total of 8 logical qubits are used.
+---------------------------------
+Running benchmark on cm42a_207
+We reuse 3 qubits, and now a total of 11 logical qubits are used.
+---------------------------------
+Running benchmark on cnt3-5_179
+We reuse 10 qubits, and now a total of 6 logical qubits are used.
+---------------------------------
+Running benchmark on cnt3-5_180
+We reuse 10 qubits, and now a total of 6 logical qubits are used.
+---------------------------------
+Running benchmark on co14_215
+We reuse 0 qubits, and now a total of 15 logical qubits are used.
+---------------------------------
+Running benchmark on cycle10_2_110
+We reuse 0 qubits, and now a total of 12 logical qubits are used.
+---------------------------------
+Running benchmark on dc2_222
+We reuse 1 qubits, and now a total of 14 logical qubits are used.
+---------------------------------
+Running benchmark on decod24-bdd_294
+We reuse 2 qubits, and now a total of 4 logical qubits are used.
+---------------------------------
+Running benchmark on decod24-v2_43
+We reuse 0 qubits, and now a total of 4 logical qubits are used.
+---------------------------------
+Running benchmark on deutsch_n2
+We reuse 0 qubits, and now a total of 2 logical qubits are used.
+---------------------------------
+Running benchmark on dnn_n2
+We reuse 0 qubits, and now a total of 2 logical qubits are used.
+---------------------------------
+Running benchmark on dnn_n8
+We reuse 0 qubits, and now a total of 8 logical qubits are used.
+---------------------------------
+Running benchmark on ex1_226
+We reuse 4 qubits, and now a total of 2 logical qubits are used.
+---------------------------------
+Running benchmark on fredkin_n3
+We reuse 0 qubits, and now a total of 3 logical qubits are used.
+---------------------------------
+Running benchmark on ghz_state_n23
+We reuse 0 qubits, and now a total of 23 logical qubits are used.
+---------------------------------
+Running benchmark on graycode6_47
+We reuse 3 qubits, and now a total of 3 logical qubits are used.
+---------------------------------
+Running benchmark on grover_n2
+We reuse 0 qubits, and now a total of 2 logical qubits are used.
+---------------------------------
+Running benchmark on hhl_n7
+We reuse 0 qubits, and now a total of 7 logical qubits are used.
+---------------------------------
+Running benchmark on hs4_n4
+We reuse 2 qubits, and now a total of 2 logical qubits are used.
+---------------------------------
+Running benchmark on hwb9_119
+We reuse 0 qubits, and now a total of 10 logical qubits are used.
+---------------------------------
+Running benchmark on inc_237
+We reuse 2 qubits, and now a total of 14 logical qubits are used.
+---------------------------------
+Running benchmark on ising_model_10
+We reuse 0 qubits, and now a total of 10 logical qubits are used.
+---------------------------------
+Running benchmark on ising_model_13
+We reuse 2 qubits, and now a total of 11 logical qubits are used.
+---------------------------------
+Running benchmark on ising_model_16
+We reuse 5 qubits, and now a total of 11 logical qubits are used.
+---------------------------------
+Running benchmark on ising_n10
+We reuse 0 qubits, and now a total of 10 logical qubits are used.
+---------------------------------
+Running benchmark on ising_n26
+We reuse 0 qubits, and now a total of 26 logical qubits are used.
+---------------------------------
+Running benchmark on iswap_n2
+We reuse 0 qubits, and now a total of 2 logical qubits are used.
+---------------------------------
+Running benchmark on knn_n25
+We reuse 18 qubits, and now a total of 7 logical qubits are used.
+---------------------------------
+Running benchmark on linearsolver_n3
+We reuse 0 qubits, and now a total of 3 logical qubits are used.
+---------------------------------
+Running benchmark on lpn_n5
+We reuse 3 qubits, and now a total of 2 logical qubits are used.
+---------------------------------
+Running benchmark on mini_alu_305
+We reuse 4 qubits, and now a total of 6 logical qubits are used.
+---------------------------------
+Running benchmark on misex1_241
+We reuse 0 qubits, and now a total of 15 logical qubits are used.
+---------------------------------
+Running benchmark on mod5mils_65
+We reuse 2 qubits, and now a total of 3 logical qubits are used.
+---------------------------------
+Running benchmark on multiply_n13
+We reuse 5 qubits, and now a total of 8 logical qubits are used.
+---------------------------------
+Running benchmark on pea_n5
+We reuse 0 qubits, and now a total of 5 logical qubits are used.
+---------------------------------
+Running benchmark on pm1_249
+We reuse 3 qubits, and now a total of 11 logical qubits are used.
+---------------------------------
+Running benchmark on qaoa_n3
+We reuse 0 qubits, and now a total of 3 logical qubits are used.
+---------------------------------
+Running benchmark on qaoa_n6
+We reuse 0 qubits, and now a total of 6 logical qubits are used.
+---------------------------------
+Running benchmark on qec_en_n5
+We reuse 1 qubits, and now a total of 4 logical qubits are used.
+---------------------------------
+Running benchmark on qft_10
+We reuse 0 qubits, and now a total of 10 logical qubits are used.
+---------------------------------
+Running benchmark on qft_13
+We reuse 0 qubits, and now a total of 13 logical qubits are used.
+---------------------------------
+Running benchmark on qft_16
+We reuse 0 qubits, and now a total of 16 logical qubits are used.
+---------------------------------
+Running benchmark on qft_20
+We reuse 0 qubits, and now a total of 20 logical qubits are used.
+---------------------------------
+Running benchmark on qft_n4
+We reuse 0 qubits, and now a total of 4 logical qubits are used.
+---------------------------------
+Running benchmark on qpe_n9
+We reuse 0 qubits, and now a total of 9 logical qubits are used.
+---------------------------------
+Running benchmark on qram_n20
+We reuse 0 qubits, and now a total of 20 logical qubits are used.
+---------------------------------
+Running benchmark on quantumwalks_n2
+We reuse 0 qubits, and now a total of 2 logical qubits are used.
+---------------------------------
+Running benchmark on radd_250
+We reuse 1 qubits, and now a total of 12 logical qubits are used.
+---------------------------------
+Running benchmark on rd32-v0_66
+We reuse 1 qubits, and now a total of 3 logical qubits are used.
+---------------------------------
+Running benchmark on rd32-v1_68
+We reuse 1 qubits, and now a total of 3 logical qubits are used.
+---------------------------------
+Running benchmark on rd53_138
+We reuse 2 qubits, and now a total of 6 logical qubits are used.
+---------------------------------
+Running benchmark on rd53_311
+We reuse 5 qubits, and now a total of 8 logical qubits are used.
+---------------------------------
+Running benchmark on rd73_140
+We reuse 5 qubits, and now a total of 5 logical qubits are used.
+---------------------------------
+Running benchmark on rd73_252
+We reuse 0 qubits, and now a total of 10 logical qubits are used.
+---------------------------------
+Running benchmark on rd84_142
+We reuse 6 qubits, and now a total of 9 logical qubits are used.
+---------------------------------
+Running benchmark on rd84_253
+We reuse 0 qubits, and now a total of 12 logical qubits are used.
+---------------------------------
+Running benchmark on simon_n6
+We reuse 0 qubits, and now a total of 6 logical qubits are used.
+---------------------------------
+Running benchmark on sqn_258
+We reuse 0 qubits, and now a total of 10 logical qubits are used.
+---------------------------------
+Running benchmark on squar5_261
+We reuse 2 qubits, and now a total of 11 logical qubits are used.
+---------------------------------
+Running benchmark on square_root_7
+We reuse 0 qubits, and now a total of 15 logical qubits are used.
+---------------------------------
+Running benchmark on swap_test_n25
+We reuse 17 qubits, and now a total of 8 logical qubits are used.
+---------------------------------
+Running benchmark on sym6_145
+We reuse 0 qubits, and now a total of 7 logical qubits are used.
+---------------------------------
+Running benchmark on sym6_316
+We reuse 7 qubits, and now a total of 7 logical qubits are used.
+---------------------------------
+Running benchmark on sym9_146
+We reuse 7 qubits, and now a total of 5 logical qubits are used.
+---------------------------------
+Running benchmark on sym9_193
+We reuse 0 qubits, and now a total of 11 logical qubits are used.
+---------------------------------
+Running benchmark on sys6-v0_111
+We reuse 3 qubits, and now a total of 7 logical qubits are used.
+---------------------------------
+Running benchmark on system9
+We reuse 5 qubits, and now a total of 7 logical qubits are used.
+---------------------------------
+Running benchmark on teleportation_n3
+We reuse 1 qubits, and now a total of 2 logical qubits are used.
+---------------------------------
+Running benchmark on test1
+We reuse 2 qubits, and now a total of 2 logical qubits are used.
+---------------------------------
+Running benchmark on test2
+We reuse 2 qubits, and now a total of 2 logical qubits are used.
+---------------------------------
+Running benchmark on test3
+We reuse 2 qubits, and now a total of 3 logical qubits are used.
+---------------------------------
+Running benchmark on toffoli_n3
+We reuse 0 qubits, and now a total of 3 logical qubits are used.
+---------------------------------
+Running benchmark on urf4_187
+We reuse 0 qubits, and now a total of 11 logical qubits are used.
+---------------------------------
+Running benchmark on urf5_158
+We reuse 0 qubits, and now a total of 9 logical qubits are used.
+---------------------------------
+Running benchmark on variational_n4
+We reuse 1 qubits, and now a total of 3 logical qubits are used.
+---------------------------------
+Running benchmark on vqe_n4
+We reuse 0 qubits, and now a total of 4 logical qubits are used.
+---------------------------------
+Running benchmark on wstate_n27
+We reuse 0 qubits, and now a total of 27 logical qubits are used.
+---------------------------------
+Running benchmark on wstate_n3
+We reuse 0 qubits, and now a total of 3 logical qubits are used.
+---------------------------------
+Running benchmark on z4_268
+We reuse 1 qubits, and now a total of 10 logical qubits are used.
+---------------------------------
