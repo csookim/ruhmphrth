@@ -263,10 +263,10 @@ def gen_layout(circ, backend, count=1e9):
     physical_graph = nx.Graph()
     physical_graph.add_edges_from(backend.coupling_map)
 
-    GM = nx.algorithms.isomorphism.GraphMatcher(physical_graph, logical_graph)
-    if GM.is_isomorphic():
-        for subgraph in GM.subgraph_isomorphisms_iter():
-            print("Match found:", subgraph)
+    # GM = nx.algorithms.isomorphism.GraphMatcher(physical_graph, logical_graph)
+    # if GM.is_isomorphic():
+    #     for subgraph in GM.subgraph_isomorphisms_iter():
+    #         print("Match found:", subgraph)
 
     starting_physical_node = find_start_point(backend.coupling_map)
 

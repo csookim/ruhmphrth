@@ -311,7 +311,7 @@ class SabreSwap_old(TransformationPass):
                         front_layer, extended_set, trial_layout
                     )
                 front_extend_cur = self._score_heuristic_bridge(
-                    front_layer, extended_set, current_layout
+                    front_layer, extended_set, current_layout, after_bridge=True
                 )
                 best_swap = self._select_swap_v2(front_extend_cur, front_extend_swap)
 
@@ -468,6 +468,37 @@ class SabreSwap_old(TransformationPass):
         if min_extend_avg < cur_extend_avg:
             return best_swap
         return None
+
+    def _select_swap_v3(self, bridge_avg, swap_avg):
+        min_front_avg, min_extend_avg = bridge_avg
+        best_swap = None
+
+        for swap_id, scores in swap_avg.items():
+            front_avg, extend_avg = scores
+            if front_avg < min_front_avg:
+                min_front_avg = front_avg
+                min_extend_avg = extend_avg
+                best_swap = swap_id
+            elif front_avg == min_front_avg and extend_avg < min_extend_avg:    
+                min_extend_avg = extend_avg
+                best_swap = swap_id
+
+        return best_swap
+
+        # best_swap = None
+        # min_extend_avg = float('inf')
+        # for swap_id in min_front_swaps:
+        #     _, extend_avg = swap_avg[swap_id]
+        #     if extend_avg < min_extend_avg:
+        #         min_extend_avg = extend_avg
+        #         best_swap = swap_id
+
+        # if min_front_avg >= 2:
+        #     return best_swap
+        # if min_extend_avg < cur_extend_avg:
+        #     return best_swap
+        # return None
+
     
     def _count_ones(self, score_list):
         count = 0
@@ -607,7 +638,7 @@ class SabreSwap_old(TransformationPass):
 
         raise TranspilerError("Heuristic %s not recognized." % heuristic)
     
-    def _score_heuristic_bridge(self, front_layer, extended_set, layout):
+    def _score_heuristic_bridge(self, front_layer, extended_set, layout, after_bridge=False):
         """Return a heuristic score for a trial layout.
 
         Assuming a trial layout has resulted from a SWAP, we now assign a cost
@@ -626,7 +657,10 @@ class SabreSwap_old(TransformationPass):
         for node in extended_set:
             extend_dist.append(self.dist_matrix[layout_map[node.qargs[0]], layout_map[node.qargs[1]]].item())
 
-        front_avg = sum(front_dist) / len(front_dist) if len(front_dist) > 0 else 0
+        if after_bridge:
+            front_avg = sum(front_dist) - 1 / len(front_dist) if len(front_dist) > 0 else 0
+        else:
+            front_avg = sum(front_dist) / len(front_dist) if len(front_dist) > 0 else 0
         extend_avg = sum(extend_dist) / len(extend_dist) if len(extend_dist) > 0 else 0
         return front_avg, extend_avg
 
