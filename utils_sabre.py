@@ -175,3 +175,32 @@ def best_mapping4(circ, backend, ext_size, count, max_eval):
             best_cxs = cx_count
             best_layout = layout
     return best_layout
+
+def best_mapping5(circ, backend, ext_size, count, max_eval, limit=5):
+    sliced_circ = slice_circuit(circ, count)
+
+    best_layout = gen_layout(circ, backend, count)
+    best_layout = reverse_mapping(sliced_circ, ext_size, backend.coupling_map, backend, best_layout, count=count)
+    t_circ = transpile_new(circ, best_layout, backend.coupling_map, ext_size=ext_size)
+    best_cxs = count_cx(t_circ)
+    unchanged = 0
+
+    for _ in range(max_eval):
+        if unchanged < limit:
+            layout = best_layout.copy()
+            l1, l2 = random.sample(list(layout.keys()), 2)
+            layout[l1], layout[l2] = layout[l2], layout[l1]
+        else:
+            layout = gen_layout(circ, backend, count)
+            # layout = reverse_mapping(sliced_circ, ext_size, backend.coupling_map, backend, best_layout, count=count)
+
+        t_circ = transpile_new(circ, layout, backend.coupling_map, ext_size=ext_size)
+        cx_count = count_cx(t_circ)
+        if cx_count < best_cxs:
+            best_cxs = cx_count
+            best_layout = layout
+            unchanged = 0
+        else:
+            unchanged += 1
+        print(best_cxs, end=" ")
+    return best_layout

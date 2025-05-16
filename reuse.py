@@ -1,16 +1,25 @@
 from qiskit.circuit import Reset
-from utils import preprocessing, qubit_interaction_graph    
+import networkx as nx
+from utils import preprocessing, qubit_interaction_graph, sub_iso_mapping  
+import matplotlib.pyplot as plt  
 
 class ReuseHeuristic:
     def __init__(self):
         self.reuse_qubits = 0
         self.total_qubits = 0
 
-    def run(self, circuit):
+    def run(self, circuit, brute_force=False, backend=None):
+        if brute_force:
+            cur_qc = self._run_brute_force(circuit, backend)
+            if cur_qc is not None:
+                return cur_qc
+        
+        self.reuse_qubits = 0
+        self.total_qubits = 0
+
         qc = preprocessing(circuit)
         active_qubits = list(range(qc.num_qubits))
         dependent_qubits, reuse_pairs = self._find_reuse_pairs(qc)
-
         i = 0
         cur_qc = qc.copy()
         chain = []
@@ -55,6 +64,41 @@ class ReuseHeuristic:
         self.total_qubits = len(active_qubits)
         cur_qc = preprocessing(cur_qc)
         return cur_qc
+    
+    def _run_brute_force(self, circuit, backend):
+        qc = preprocessing(circuit)
+        active_qubits = list(range(qc.num_qubits))
+        dependent_qubits, reuse_pairs = self._find_reuse_pairs(qc)
+        physical_graph = nx.Graph()
+        physical_graph.add_edges_from(backend.coupling_map)
+        interaction_graph = qubit_interaction_graph(qc)
+
+        print(reuse_pairs)
+        for pair in reuse_pairs:
+            mapping = self._check_map(pair, interaction_graph, physical_graph)
+            if mapping is not None:
+                cur_qc = self._modify_circuit(qc, pair)
+                cur_qc = preprocessing(cur_qc)
+                return cur_qc
+        
+        return None
+
+    def _check_map(self, pair, interaction_graph, physical_graph):
+        graph = nx.Graph()
+        for k, v in interaction_graph.items():
+            graph.add_edge(k[0], k[1])
+        
+        i, j = pair
+        for neighbor in list(graph.neighbors(j)):
+            if neighbor != i:
+                graph.add_edge(i, neighbor)
+        graph.remove_node(j)
+
+        GM = nx.algorithms.isomorphism.GraphMatcher(physical_graph, graph)
+        matched = list(GM.subgraph_monomorphisms_iter())
+        if len(matched) == 0:
+            return None
+        return matched[0]
     
     def _share_same_gate(self, qiskit_dag, i, j):
         for node in qiskit_dag.topological_op_nodes():
