@@ -188,7 +188,7 @@ def generate_ordered_list_logical(logical_graph):
         current = queue.pop(0)
         neighbors = [(n, node_weights[n]) for n in logical_graph.neighbors(current) 
                     if n not in visited]
-        random.shuffle(neighbors)
+        # random.shuffle(neighbors)
         neighbors.sort(key=lambda x: x[1], reverse=True)
         for neighbor, _ in neighbors:
             if neighbor not in visited:
@@ -209,7 +209,7 @@ def generate_ordered_list_physical(physical_graph, starting_node):
         current = queue.pop(0)
         neighbors = [(n, node_degrees[n]) for n in physical_graph.neighbors(current) 
                     if n not in visited]
-        random.shuffle(neighbors)
+        # random.shuffle(neighbors)
         neighbors.sort(key=lambda x: x[1], reverse=True)
         for neighbor, _ in neighbors:
             if neighbor not in visited:
