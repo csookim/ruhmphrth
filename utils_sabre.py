@@ -202,5 +202,4 @@ def best_mapping5(circ, backend, ext_size, count, max_eval, limit=5):
             unchanged = 0
         else:
             unchanged += 1
-        print(best_cxs, end=" ")
     return best_layout
